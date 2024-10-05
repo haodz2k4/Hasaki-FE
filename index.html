@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasaki NavBar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./public/styles.css">
+    <!--FONT ANWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-green py-2">
+        <div class="container">
+            <!-- Brand Logo and Name -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://via.placeholder.com/40" alt="Logo" class="rounded-circle me-2">
+                <div class="brand-text">
+                    <span class="fw-bold">HASAKI.vn</span><br>
+                    <small>Chất lượng thật - Giá trị thật!</small>
+                </div>
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <!-- Search bar with icon inside input -->
+                    <li class="nav-item mx-2 search-bar position-relative">
+                        <form class="position-relative">
+                            <input class="form-control rounded-pill" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" id="searchInput" oninput="showSuggestions()">
+                            <i class="bi bi-search position-absolute search-icon"></i>
+                            <!-- Suggestions Box -->
+                            <div class="suggestions-box d-none" id="suggestionsBox">
+                                <ul>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Deal 2K">
+                                        Deal 2K áp dụng CN215 Quảng Bình
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua Gì Cũng Rẻ">
+                                        Mua Gì Cũng Rẻ - Dưới 99K
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua 2 Giảm Nửa Giá">
+                                        Mua 2 Giảm Nửa Giá
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Giảm 200K">
+                                        Giảm 200K/Gói Triệt Lông Diode Laser
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Chống Nắng Da Mặt">
+                                        Chống Nắng Da Mặt
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Làm Sạch Da">
+                                        Làm Sạch Da
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </li>
+
+                    <!-- User Account -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person"></i> Chào Hào <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Store Locator -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-shop"></i> Hệ thống cửa hàng</a>
+                    </li>
+
+                    <!-- Customer Support -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-telephone"></i> Hỗ trợ khách hàng</a>
+                    </li>
+
+                    <!-- Cart with notification -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link position-relative text-white cart-icon" href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--End Header-->
+    <div class="container mt-4">
+        <h3 id="title-sold">Bán chạy</h3>
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Carousel Item 1 (active) -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/120" alt="Product 1">
+                                <div class="product-sold-title">Tẩy Tế Bào Chết Da Mặt</div>
+                                <div class="product-sold-count">1.223M đã bán</div>
+                                <div class="product-sold-price">350.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/120" alt="Product 2">
+                                <div class="product-sold-title">Son Kem / Tint</div>
+                                <div class="product-sold-count">1.111M đã bán</div>
+                                <div class="product-sold-price">250.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 3">
+                                <div class="product-sold-title">Son Dưỡng Môi</div>
+                                <div class="product-sold-count">1.053M đã bán</div>
+                                <div class="product-sold-price">150.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 3">
+                                <div class="product-sold-title">Son Dưỡng Môi</div>
+                                <div class="product-sold-count">1.053M đã bán</div>
+                                <div class="product-sold-price">150.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 6">
+                                <div class="product-sold-title">Xịt Khoáng</div>
+                                <div class="product-sold-count">0.832M đã bán</div>
+                                <div class="product-sold-price">120.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Item 2 -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 4">
+                                <div class="product-sold-title">Bộ Chăm Sóc Da Mặt</div>
+                                <div class="product-sold-count">0.99M đã bán</div>
+                                <div class="product-sold-price">450.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 3">
+                                <div class="product-sold-title">Son Dưỡng Môi</div>
+                                <div class="product-sold-count">1.053M đã bán</div>
+                                <div class="product-sold-price">150.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 5">
+                                <div class="product-sold-title">Kem Đánh Răng</div>
+                                <div class="product-sold-count">0.882M đã bán</div>
+                                <div class="product-sold-price">100.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 6">
+                                <div class="product-sold-title">Xịt Khoáng</div>
+                                <div class="product-sold-count">0.832M đã bán</div>
+                                <div class="product-sold-price">120.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                        
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="card product-sold-card">
+                                <img src="https://via.placeholder.com/100" alt="Product 6">
+                                <div class="product-sold-title">Xịt Khoáng</div>
+                                <div class="product-sold-count">0.832M đã bán</div>
+                                <div class="product-sold-price">120.000đ</div> <!-- Giá tiền -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!--CATEGORY-->
+    <!-- Category Carousel -->
+    <div class="container my-4 category-carousel">
+        <h5 class="category-title">Danh mục</h5>
+        <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-between">
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Trang Điểm Môi">
+                            <h6>Trang Điểm Môi</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Mặt Nạ">
+                            <h6>Mặt Nạ</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Trang Điểm Mặt">
+                            <h6>Trang Điểm Mặt</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sữa Rửa Mặt">
+                            <h6>Sữa Rửa Mặt</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Dầu Gội & Dầu Xả">
+                            <h6>Dầu Gội & Dầu Xả</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Chống Nắng">
+                            <h6>Chống Nắng</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sữa Tắm">
+                            <h6>Sữa Tắm</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Dưỡng Thể">
+                            <h6>Dưỡng Thể</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between">
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Tẩy Trang">
+                            <h6>Tẩy Trang</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sản Phẩm Khác">
+                            <h6>Sản Phẩm Khác</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sản Phẩm A">
+                            <h6>Sản Phẩm A</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sản Phẩm B">
+                            <h6>Sản Phẩm B</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sản Phẩm C">
+                            <h6>Sản Phẩm C</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sản Phẩm D">
+                            <h6>Sản Phẩm D</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sản Phẩm E">
+                            <h6>Sản Phẩm E</h6>
+                        </div>
+                        <div class="category-item">
+                            <img src="https://via.placeholder.com/80" alt="Sản Phẩm F">
+                            <h6>Sản Phẩm F</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!--LIST PRODUCT-->
+    <div class="container mt-4">
+        <h3>Sản phẩm gợi ý cho bạn</h3>
+        <div class="row">
+            <!-- Product Items -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-recommend-card">
+                    <img src="https://via.placeholder.com/150" alt="Product 1">
+                    <div class="product-title">Sản phẩm 1</div>
+                    <div class="product-prices">
+                        <div class="product-old-price">500.000đ</div>
+                        <div class="product-new-price">300.000đ</div>
+                    </div>
+                    <div class="product-sale-percent">-40%</div>
+                    <div class="product-icons">
+                        <div class="product-sold">
+                            <i class="bi bi-cart-fill"></i> 1.5K đã bán
+                        </div>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i> 4.5
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-recommend-card">
+                    <img src="https://via.placeholder.com/150" alt="Product 2">
+                    <div class="product-title">Sản phẩm 2</div>
+                    <div class="product-prices">
+                        <div class="product-old-price">450.000đ</div>
+                        <div class="product-new-price">270.000đ</div>
+                    </div>
+                    <div class="product-sale-percent">-40%</div>
+                    <div class="product-icons">
+                        <div class="product-sold">
+                            <i class="bi bi-cart-fill"></i> 1.2K đã bán
+                        </div>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i> 4.0
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-recommend-card">
+                    <img src="https://via.placeholder.com/150" alt="Product 3">
+                    <div class="product-title">Sản phẩm 3</div>
+                    <div class="product-prices">
+                        <div class="product-old-price">600.000đ</div>
+                        <div class="product-new-price">360.000đ</div>
+                    </div>
+                    <div class="product-sale-percent">-40%</div>
+                    <div class="product-icons">
+                        <div class="product-sold">
+                            <i class="bi bi-cart-fill"></i> 900 đã bán
+                        </div>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i> 4.3
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-recommend-card">
+                    <img src="https://via.placeholder.com/150" alt="Product 4">
+                    <div class="product-title">Sản phẩm 4</div>
+                    <div class="product-prices">
+                        <div class="product-old-price">700.000đ</div>
+                        <div class="product-new-price">420.000đ</div>
+                    </div>
+                    <div class="product-sale-percent">-40%</div>
+                    <div class="product-icons">
+                        <div class="product-sold">
+                            <i class="bi bi-cart-fill"></i> 600 đã bán
+                        </div>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i> 4.8
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-recommend-card">
+                    <img src="https://via.placeholder.com/150" alt="Product 5">
+                    <div class="product-title">Sản phẩm 5</div>
+                    <div class="product-prices">
+                        <div class="product-old-price">800.000đ</div>
+                        <div class="product-new-price">480.000đ</div>
+                    </div>
+                    <div class="product-sale-percent">-40%</div>
+                    <div class="product-icons">
+                        <div class="product-sold">
+                            <i class="bi bi-cart-fill"></i> 1K đã bán
+                        </div>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i> 4.7
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-recommend-card">
+                    <img src="https://via.placeholder.com/150" alt="Product 6">
+                    <div class="product-title">Sản phẩm 6</div>
+                    <div class="product-prices">
+                        <div class="product-old-price">900.000đ</div>
+                        <div class="product-new-price">540.000đ</div>
+                    </div>
+                    <div class="product-sale-percent">-40%</div>
+                    <div class="product-icons">
+                        <div class="product-sold">
+                            <i class="bi bi-cart-fill"></i> 1.3K đã bán
+                        </div>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i> 4.2
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-recommend-card">
+                    <img src="https://via.placeholder.com/150" alt="Product 6">
+                    <div class="product-title">Sản phẩm 6</div>
+                    <div class="product-prices">
+                        <div class="product-old-price">900.000đ</div>
+                        <div class="product-new-price">540.000đ</div>
+                    </div>
+                    <div class="product-sale-percent">-40%</div>
+                    <div class="product-icons">
+                        <div class="product-sold">
+                            <i class="bi bi-cart-fill"></i> 1.3K đã bán
+                        </div>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i> 4.2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+              <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <p class="text-muted">© 2022</p>
+            </div>
+        
+            <div class="col mb-3">
+        
+            </div>
+        
+            <div class="col mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              </ul>
+            </div>
+        
+            <div class="col mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              </ul>
+            </div>
+        
+            <div class="col mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              </ul>
+            </div>
+          </footer>
+    <!--END FOOTER-->
+    <script>
+        function showSuggestions() {
+            const searchInput = document.getElementById('searchInput').value;
+            const suggestionsBox = document.getElementById('suggestionsBox');
+            
+            if (searchInput.length > 0) {
+                suggestionsBox.classList.remove('d-none');
+            } else {
+                suggestionsBox.classList.add('d-none');
+            }
+        }
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
