@@ -6,17 +6,21 @@
 .navbar-brand .brand-text {
     color: white;
     font-size: 1rem;
-    line-height: 1.2; /* Giảm khoảng trống trong header */
+    line-height: 1.2;
+    /* Giảm khoảng trống trong header */
 }
 
 .navbar .search-bar {
-    flex-grow: 2; /* Để thanh tìm kiếm chiếm nhiều không gian hơn */
-    max-width: 800px; /* Kéo dài thanh tìm kiếm */
+    flex-grow: 2;
+    /* Để thanh tìm kiếm chiếm nhiều không gian hơn */
+    max-width: 800px;
+    /* Kéo dài thanh tìm kiếm */
 }
 
 .navbar .search-bar input {
     width: 100%;
-    padding-right: 180px;/* Dành không gian cho icon bên trong */
+    padding-right: 180px;
+    /* Dành không gian cho icon bên trong */
     padding-left: 40px;
 }
 
@@ -28,8 +32,10 @@
 }
 
 .navbar {
-    padding-top: 20px; /* Điều chỉnh khoảng cách phía trên */
-    padding-bottom: 20px; /* Điều chỉnh khoảng cách phía dưới */
+    padding-top: 20px;
+    /* Điều chỉnh khoảng cách phía trên */
+    padding-bottom: 20px;
+    /* Điều chỉnh khoảng cách phía dưới */
 }
 
 /* Điều chỉnh chiều cao của các mục trong thanh điều hướng */
@@ -40,21 +46,26 @@
 }
 
 .navbar .search-bar input {
-    height: 45px; /* Tăng chiều cao của ô tìm kiếm */
+    height: 45px;
+    /* Tăng chiều cao của ô tìm kiếm */
 }
+
 .navbar .nav-link {
-    font-size: 1rem; /* Tăng kích thước chữ */
+    font-size: 1rem;
+    /* Tăng kích thước chữ */
     font-weight: 500;
 }
 
 .navbar .nav-link i {
-    font-size: 1.5rem; /* Tăng kích thước các biểu tượng */
+    font-size: 1.5rem;
+    /* Tăng kích thước các biểu tượng */
 }
 
 .navbar .badge {
     font-size: 0.9rem;
     padding: 0.5rem;
-    min-width: 20px; /* Badge rộng hơn để nổi bật */
+    min-width: 20px;
+    /* Badge rộng hơn để nổi bật */
 }
 
 /* Cart icon styling */
@@ -64,14 +75,17 @@
 }
 
 .cart-icon:hover {
-    color: #f8d7da; /* Đổi màu khi hover */
-    transform: scale(1.1); /* Tăng kích thước khi hover */
+    color: #f8d7da;
+    /* Đổi màu khi hover */
+    transform: scale(1.1);
+    /* Tăng kích thước khi hover */
 }
 
 .navbar .badge {
     font-size: 0.9rem;
     padding: 0.4rem;
-    background-color: #ff3d3d; /* Màu đỏ nổi bật */
+    background-color: #ff3d3d;
+    /* Màu đỏ nổi bật */
 }
 
 /* Responsive Adjustments */
@@ -80,6 +94,7 @@
         max-width: 100%;
     }
 }
+
 /*Suggestion*/
 /* Suggestions Dropdown */
 .suggestions-box {
@@ -115,9 +130,69 @@
         width: 100%;
     }
 }
+
 /*End suggestion*/
 
 /*BANNER*/
+.banner-container {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* Các ảnh trong banner */
+.banner-slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hiển thị slide đầu tiên */
+.banner-slide.active {
+    display: block;
+}
+
+/* Các nút điều hướng */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Đổi nền để dễ nhìn trên ảnh */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.prev {
+    left: 20px;
+    /* Di chuyển nút bên trong ảnh */
+}
+
+.next {
+    right: 20px;
+    /* Di chuyển nút bên trong ảnh */
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Đổi màu khi hover */
+}
+
 
 /*END BANNER*/
 
@@ -153,12 +228,14 @@
 }
 
 /* Customize carousel control icons */
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
     background-color: #176c46;
     border-radius: 50%;
     width: 35px;
     height: 35px;
 }
+
 /*END CATEGORY */
 /* Custom CSS */
 .bg-green {
@@ -168,7 +245,8 @@
 .navbar-brand .brand-text {
     color: white;
     font-size: 1rem;
-    line-height: 1.2; /* Giảm khoảng trống trong header */
+    line-height: 1.2;
+    /* Giảm khoảng trống trong header */
 }
 
 .navbar .search-bar {
@@ -178,7 +256,8 @@
 
 .navbar .search-bar input {
     width: 100%;
-    padding-left: 40px; /* Dành không gian cho icon bên trong */
+    padding-left: 40px;
+    /* Dành không gian cho icon bên trong */
 }
 
 .search-icon {
@@ -189,12 +268,14 @@
 }
 
 .navbar .nav-link {
-    font-size: 1rem; /* Tăng kích thước chữ */
+    font-size: 1rem;
+    /* Tăng kích thước chữ */
     font-weight: 500;
 }
 
 .navbar .nav-link i {
-    font-size: 1.5rem; /* Tăng kích thước các biểu tượng */
+    font-size: 1.5rem;
+    /* Tăng kích thước các biểu tượng */
 }
 
 .navbar .badge {
@@ -208,10 +289,12 @@
         max-width: 100%;
     }
 }
+
 /*SOLD*/
 .product-sold-card {
     text-align: center;
-    border: 1px solid #ddd; /* Thêm đường viền */
+    border: 1px solid #ddd;
+    /* Thêm đường viền */
     padding: 20px;
     transition: transform 0.3s ease;
     display: flex;
@@ -219,38 +302,49 @@
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
-    border-radius: 10px; /* Tùy chỉnh để có góc bo tròn */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    border-radius: 10px;
+    /* Tùy chỉnh để có góc bo tròn */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng */
 }
+
 .product-sold-card img {
-    width: 150px; /* Kích thước hình ảnh */
+    width: 150px;
+    /* Kích thước hình ảnh */
     height: 150px;
     object-fit: cover;
     margin-bottom: 10px;
 }
+
 .product-sold-card:hover {
     transform: scale(1.05);
 }
+
 .product-sold-title {
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
 }
+
 .product-sold-count {
     color: gray;
     font-size: 0.9rem;
 }
+
 .product-sold-price {
-    color: #ff5722; /* Màu nổi bật cho giá tiền */
+    color: #ff5722;
+    /* Màu nổi bật cho giá tiền */
     font-weight: bold;
     font-size: 1rem;
     margin-top: 5px;
 }
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: black;
     border-radius: 50%;
 }
+
 #title-sold {
     font-weight: bold;
     color: #176c46;
@@ -270,31 +364,37 @@
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .product-recommend-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
 }
+
 .product-title {
     font-size: 1rem;
     font-weight: bold;
     margin-top: 10px;
 }
+
 .product-prices {
     margin-top: 5px;
     display: flex;
     justify-content: center;
     gap: 10px;
 }
+
 .product-old-price {
     color: gray;
     text-decoration: line-through;
 }
+
 .product-new-price {
     color: #ff5722;
     font-weight: bold;
 }
+
 .product-sale-percent {
     position: absolute;
     top: 10px;
@@ -305,25 +405,30 @@
     font-size: 0.9rem;
     border-radius: 50%;
 }
+
 .product-icons {
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .product-sold,
 .product-rating {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
 .product-sold i,
 .product-rating i {
     color: #ffc107;
 }
+
 .product-sold i {
     color: #ff5722;
 }
+
 .btn-load-more {
     display: flex;
     justify-content: center;
@@ -332,13 +437,19 @@
 
 /* Hover Effect */
 .product-recommend-card:hover {
-    background-color: #176c46; /* Màu nền khi hover */
-    transform: scale(1.05); /* Tăng nhẹ kích thước để tạo hiệu ứng */
-    color: white; /* Đổi màu chữ khi hover */
+    background-color: #176c46;
+    /* Màu nền khi hover */
+    transform: scale(1.05);
+    /* Tăng nhẹ kích thước để tạo hiệu ứng */
+    color: white;
+    /* Đổi màu chữ khi hover */
 }
+
 .product-recommend-card:hover .product-title,
 .product-recommend-card:hover .product-old-price,
 .product-recommend-card:hover .product-new-price {
-    color: white; /* Đổi màu chữ của các phần tử bên trong */
+    color: white;
+    /* Đổi màu chữ của các phần tử bên trong */
 }
+
 /*END SUGGESTIOn*/
