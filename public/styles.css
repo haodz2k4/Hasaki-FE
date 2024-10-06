@@ -882,7 +882,7 @@ body {
 	top: 0;
 	padding: 0 26px;
 	height: 100%;
-    background-color: #7fad39; /* Màu nền cho nút */
+    background-color: #336e5b; /* Màu nền cho nút */
     color: #ffffff; /* Màu chữ cho nút */
     border: none; /* Bỏ đường viền cho nút */
     cursor: pointer; /* Thay đổi con trỏ khi hover */
@@ -913,7 +913,7 @@ body {
 }
 
 .footer__widget .footer__widget__social a:hover {
-	background: #7fad39;
+	background: #336e5b;
 	color: #ffffff;
 	border-color: #ffffff;
 }
