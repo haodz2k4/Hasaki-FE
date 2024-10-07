@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  margin: 0; /* Xóa margin mặc định */
+  height: 100vh; /* Chiều cao đầy đủ */
+}
+.left {
+  width: 22%; /* Chiếm 22% chiều rộng */
+  background-color: #f0f0f0; /* Màu nền cho div bên trái */
+}
+.right {
+  width: 78%; /* Chiếm 78% chiều rộng */
+  background-color: #e0e0e0; /* Màu nền cho div bên phải */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 110px;
+}
+
+.thongtintaikhoan {
+  border: 2px solid red;
+  width: 75%;
+  height: 35vh;
+  padding-left: 30px;
+}
+
+.tttk {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Đảm bảo khoảng cách đều giữa các div */
+  margin-right: 10px;
+}
+
+.tttk-a {
+  border: 2px solid red;
+  width: 45%;
+  height: 13vh;
+  margin: 0 10px; /* Thêm margin bên trái và bên phải cho khoảng cách */
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+/* Để loại bỏ khoảng cách dư thừa khi có margin */
+.tttk-a:first-child {
+  margin-left: 0; /* Không có margin bên trái cho div đầu tiên */
+}
+
+.tttk-a:last-child {
+  margin-right: 0; /* Không có margin bên phải cho div cuối cùng */
+}
+
+
+.tttk-a1 {
+    display: flex;
+    justify-content: space-between; /* Đặt khoảng cách giữa tên và liên kết */
+    align-items: center; /* Canh giữa theo chiều dọc */
+
+}

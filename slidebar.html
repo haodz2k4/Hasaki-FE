@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered Sidebar Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="slidebar.css" />
+    <style>
+      body{
+        background-color: #b2b2b2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Wrapper để căn giữa sidebar -->
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar d-flex flex-column">
+        <!-- Profile Section -->
+        <div class="profile-section">
+          <div class="d-flex align-items-center">
+            <!-- Icon bên trái -->
+            <div>
+              <img
+                src="https://via.placeholder.com/50"
+                alt="Profile Icon"
+                class="rounded-circle"
+              />
+            </div>
+
+            <!-- Text và Chỉnh sửa nằm trên/dưới -->
+            <div class="d-flex flex-column ms-3">
+              <span style="font-size: 15px"
+                >Chào: <strong>Nguyễn Văn A</strong></span
+              >
+              <a
+                href="#"
+                class="btn btn-link p-0"
+                style="text-align: left; font-size: 12px"
+                >Chỉnh sửa</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <a href="#" class="nav-link active">Quản lí tài khoản</a>
+        <a href="#" class="nav-link">Hasaki tích điểm</a>
+        <a href="#" class="nav-link">Thông tin tài khoản</a>
+        <a href="#" class="nav-link">Đơn hàng của tôi</a>
+        <a href="#" class="nav-link">Booking của tôi</a>
+        <a href="#" class="nav-link">Số địa chỉ nhận hàng</a>
+        <a href="#" class="nav-link"
+          >Danh sách yêu thích
+          <a href="#" class="nav-link">Mua lại</a>
+          <a href="#" class="nav-link">Hỏi đáp</a>
+        </a>
+      </div>
+    </div>
+
+    <!-- Nội dung trang chính -->
+    <div class="content">
+      <h1>Main Content</h1>
+      <p>This is the main content area.</p>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-I1qnZf3JZCPzZYK0T+PF3WzEEHcFJl4BvhziAmMOAA5Ey5FJqD1cJ+eDoKsPflO7"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Lấy tất cả các thẻ a trong sidebar
+      const links = document.querySelectorAll('.sidebar a');
+
+      // Thêm sự kiện mouseenter và mouseleave cho từng thẻ a
+      links.forEach((link) => {
+        link.addEventListener('mouseenter', () => {
+          link.style.width = '100%'; // Đặt chiều rộng thành 100% khi hover
+          link.style.paddingleft = '0px';
+        });
+
+        link.addEventListener('mouseleave', () => {
+          link.style.width = ''; // Đặt chiều rộng về mặc định khi không hover
+        });
+      });
+    </script>
+  </body>
+</html>

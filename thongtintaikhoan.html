@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông Tin Tài Khoản</title>
+    <link rel="stylesheet" href="thongtintaikhoan.css" />
+    <style>
+      /* CSS có thể đặt ở đây hoặc trong tệp thongtintaikhoan.css */
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <!-- Nội dung cho div bên trái -->
+      <p>Div bên trái</p>
+    </div>
+    <div class="right">
+      <div class="thongtintaikhoan">
+        <div class="thongtintaikhoan-a">
+          <h1 class="tttk-header">Thông tin tài khoản</h1>
+          <div class="tttk-content">
+            <div class="tttk-icon">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="Icon"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="tttk-info">
+              <div class="info-form">
+                <label for="username">Tên tài khoản:</label>
+                <input type="text" id="username" value="Kha Tran" />
+
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  value="trankha1882k4@gmail.com"
+                />
+
+                <label>Giới tính:</label>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    checked
+                  />
+                  <label for="male">Nam</label>
+                  <input
+                    type="checkbox"
+                    id="female"
+                    name="gender"
+                    value="female"
+                  />
+                  <label for="female">Nữ</label>
+                </div>
+
+                <label for="dob">Ngày sinh:</label>
+                <input type="date" id="dob" />
+
+                <div style="margin-top: 15px">
+                  <input type="checkbox" id="promotions" />
+                  <label
+                    for="promotions"
+                    style="font-size: 18px; padding-top: 10px"
+                    >Nhận thông tin khuyến mãi</label
+                  >
+                </div>
+
+                <button
+                  type="button"
+                  class="btn-update"
+                  style="
+                    width: 100%;
+                    background-color: #0056b3;
+                    color: white;
+                    margin-top: 20px;
+                  "
+                >
+                  Cập nhật
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tttk-right">
+          <h3>Số điện thoại và Email</h3>
+          <div class="phone-section">
+            <div>
+              <label for="phone">Số điện thoại:</label>
+              <p style="font-size: 12px; color: #777">Cập nhật số điện thoại</p>
+              <!-- Ghi chú nhỏ hơn -->
+            </div>
+            <button
+              type="button"
+              class="btn-update"
+              onclick="window.location.href='your-new-page.html'"
+            >
+              Cập nhật
+            </button>
+            <!-- Chuyển trang -->
+          </div>
+
+          <div class="email-section">
+            <label>Email:</label>
+            <p>trankha1882k4@gmail.com</p>
+          </div>
+
+          <div class="security-section">
+            <h4>Bảo mật</h4>
+            <button type="button" class="btn-update">Đổi mật khẩu</button>
+          </div>
+          <h4 style="margin-top: 60px">Liên kết mạng xã hội</h4>
+          <div class="social-section">
+            <div class="social-item">
+              <span>Facebook</span>
+              <button type="button" class="btn-link">Liên kết</button>
+            </div>
+            <div class="social-item">
+              <span>Google</span>
+              <button type="button" class="btn-link">Liên kết</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

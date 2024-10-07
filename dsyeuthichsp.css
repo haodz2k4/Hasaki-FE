@@ -1,0 +1,58 @@
+body {
+  background-color: #cccccc;
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  flex-basis: 22%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.right {
+  flex-basis: 70%;
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+}
+
+.booking {
+  margin-top: 120px;
+  /* border: 1px blue solid; */
+  width: 80%;
+  height: 45vh;
+  background-color: white;
+}
+
+.booking-header {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.booking-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.btn-custom {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #007f00; /* Dark green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background-color: #1e7a1e; /* Slightly darker green on hover */
+}

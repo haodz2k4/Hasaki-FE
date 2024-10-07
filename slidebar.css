@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 22%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar {
+  height: 70vh;
+  width: 90%;
+  background-color: #f8f9fa;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  /* border: 2px solid red; */
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 30px;
+}
+
+.sidebar a {
+  display: block; /* Thay đổi để thẻ a chiếm toàn bộ chiều rộng */
+  margin: 0; /* Xóa margin để thẻ a không có khoảng cách */
+  font-size: 11px;
+  font-weight: 500;
+  color: #333;
+  padding: 10px; /* Thêm padding để tăng kích thước vùng nhấp */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+  /* border-radius: 4px; Thêm bo góc nếu cần */
+  /* border:2px solid blue; */
+}
+
+.sidebar a:hover {
+  color: #e8460b; /* Đổi màu chữ khi hover */
+  background-color: #e0dede; /* Màu nền khi hover */
+}
+
+.profile-section {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.profile-section img {
+  width: 40px;
+  height: 40px;
+}
+
+.profile-section span {
+  font-size: 15px;
+}
+.nav-link{
+    padding:8px !important;
+}
+.content {
+  margin-left: 270px;
+  padding: 15px;
+}
