@@ -1,0 +1,35 @@
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 20px;
+    background-color: #343a40; /* Dark background for the sidebar */
+    color: #fff; /* White text */
+    transition: all 0.3s; /* Transition effect for hover */
+  }
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Space below the header */
+  }
+  .sidebar .nav-link {
+    color: #adb5bd; /* Lighter text for links */
+    transition: color 0.3s; /* Smooth color transition on hover */
+  }
+  .sidebar .nav-link:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #495057; /* Background on hover */
+    border-radius: 4px; /* Rounded corners on hover */
+  }
+  /* Main content styles */
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  /* Navbar styles */
+  .navbar {
+    margin-left: 250px; /* Align navbar with the main content */
+  }
+  

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- Custom styles -->
+  <style>
+    /* Root container to apply flexbox layout */
+    .container-flex {
+      display: flex;
+      min-height: 100vh; /* Ensures the sidebar and content fill the entire viewport height */
+    }
+    
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px; /* Fixed sidebar width */
+      padding: 20px;
+      background-color: #343a40; /* Dark background for the sidebar */
+      color: #fff; /* White text */
+      transition: all 0.3s; /* Transition effect for hover */
+      overflow-y: auto; /* Enable scrolling if content overflows */
+    }
+    .sidebar h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px; /* Space below the header */
+    }
+    .sidebar .nav-link {
+      color: #adb5bd; /* Lighter text for links */
+      transition: color 0.3s; /* Smooth color transition on hover */
+    }
+    .sidebar .nav-link:hover {
+      color: #fff; /* Change text color on hover */
+      background-color: #495057; /* Background on hover */
+      border-radius: 4px; /* Rounded corners on hover */
+    }
+    .separator {
+      margin: 20px 0;
+      border-top: 1px solid #495057; /* Separator line */
+    }
+    
+    /* Main content area */
+    .main-content {
+      flex-grow: 1; /* This allows the content area to take up remaining space */
+      padding: 20px;
+    }
+    
+    /* Remove margin from navbar items */
+    .navbar-nav .nav-item {
+      margin-left: 20px;
+    }
+
+    /* Ensure the navbar stays on top of the sidebar */
+    .navbar {
+      z-index: 1;
+      width: 100%; /* Ensure the navbar spans the full width */
+    }
+    .show {
+        background-color: rgba(255, 0, 0, 0.389);
+    }
+    .toolbar {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+.toolbar .form-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.toolbar .form-control {
+  border-radius: 4px;
+}
+
+.toolbar .btn {
+  height: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.toolbar .form-group {
+  margin-bottom: 0;
+}
+.form-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .custom-file-input ~ .custom-file-label::after {
+      content: "Chọn";
+    }
+    /* Styling cho khu vực tải lên hình ảnh */
+    .image-upload-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border: 2px dashed #ced4da;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .image-upload-wrapper:hover {
+      background-color: #e2e6ea;
+      border-color: #adb5bd;
+    }
+    .image-upload-wrapper input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    /* Hiển thị thumbnail hình ảnh đã chọn */
+    .image-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .image-preview img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link show" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-box"></i> Sản phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-users"></i> Người Dùng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-list"></i> Danh mục</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-brands fa-servicestack"></i> Dịch vụ</a>
+        </li>
+        <li class="nav-item"></li>
+          <a class="nav-link" href="#"><i class="fa-solid fa-truck-field-un"></i> Nhà cung cấp </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-cart-shopping"></i> Đơn Hàng</a>
+          <ul class="collapse list-unstyled" id="orderSubmenu">
+            <li class="nav-item">
+              <a class="nav-link" href="#">- <i class="fas fa-user"></i> Khách hàng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">- <i class="fas fa-truck"></i> Nhà cung cấp</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-user-shield"></i> Nhóm Quyền</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-key"></i> Phân Quyền</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-user-cog"></i> Tài Khoản</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-message"></i> Nhắn tin</a>
+          </li>
+      </ul>
+      <div class="separator"></div>
+      <h5 class="text-light">Cài đặt Chung</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-cogs"></i> Cài đặt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> Thông tin</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Admin Panel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      
+      <!-- Page content -->
+      <div class="container">
+        <div class="form-container">
+          <h2 class="mb-4 text-center">Thêm Sản Phẩm Mới</h2>
+          <form>
+            <!-- Tiêu đề -->
+            <div class="mb-3">
+              <label for="title" class="form-label">Tiêu đề</label>
+              <input type="text" class="form-control" id="title" name="title" placeholder="Nhập tiêu đề sản phẩm" required>
+            </div>
+      
+            <!-- Danh mục -->
+            <div class="mb-3">
+              <label for="category" class="form-label">Danh mục</label>
+              <select class="form-control" id="category" name="categoryId" required>
+                <option selected disabled>Chọn danh mục</option>
+                <option value="1">Danh mục 1</option>
+                <option value="2">Danh mục 2</option>
+                <option value="3">Danh mục 3</option>
+                <!-- Thêm các danh mục khác tại đây -->
+              </select>
+            </div>
+             <!-- Hình ảnh -->
+             <div class="mb-3">
+              <label class="form-label">Hình ảnh</label>
+              <div class="image-upload-wrapper">
+                <span>Kéo thả hoặc nhấp để chọn hình ảnh</span>
+                <input type="file" id="image" name="images[]" accept="image/*" multiple>
+              </div>
+              <div class="image-preview" id="imagePreview"></div>
+            </div>
+            <!-- Mô tả -->
+            <div class="mb-3">
+              <label for="description" class="form-label">Mô tả</label>
+              <textarea class="form-control" id="description" name="description" rows="5" placeholder="Nhập mô tả sản phẩm" required></textarea>
+            </div>
+      
+            <!-- Nổi bật -->
+            <div class="mb-3">
+              <label class="form-label d-block">Nổi bật</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="featured" id="featuredYes" value="yes" required>
+                <label class="form-check-label" for="featuredYes">Có</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="featured" id="featuredNo" value="no">
+                <label class="form-check-label" for="featuredNo">Không</label>
+              </div>
+            </div>
+      
+            <!-- Giá tiền và Phần trăm giảm giá -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="price" class="form-label">Giá tiền (VND)</label>
+                <input type="number" class="form-control" id="price" name="price" placeholder="Nhập giá tiền" min="0" required>
+              </div>
+              <div class="col-md-6">
+                <label for="discount" class="form-label">Phần trăm giảm giá (%)</label>
+                <input type="number" class="form-control" id="discount" name="discountPercentage" placeholder="Nhập phần trăm giảm giá" min="0" max="100">
+              </div>
+            </div>
+      
+            <!-- Vị trí và Trạng thái -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="position" class="form-label">Vị trí</label>
+                <input type="number" class="form-control" id="position" name="position" placeholder="Nhập vị trí" min="1" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label d-block">Trạng thái</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="status" id="active" value="active" required>
+                  <label class="form-check-label" for="active">Active</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="status" id="inactive" value="inactive">
+                  <label class="form-check-label" for="inactive">Inactive</label>
+                </div>
+              </div>
+            </div>
+      
+           
+      
+            <!-- Nút Submit -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Optional, only required if you need dropdowns or other interactive elements) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

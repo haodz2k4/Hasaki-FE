@@ -9,7 +9,6 @@
     line-height: 1.2;
     /* Giảm khoảng trống trong header */
 }
-
 .navbar .search-bar {
     flex-grow: 2;
     /* Để thanh tìm kiếm chiếm nhiều không gian hơn */
