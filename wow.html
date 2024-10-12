@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web E-commerce</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #dee2e6;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .recommended-product-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .recommended-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommended-product-card img {
+            border-radius: 10px;
+            max-height: 300px; /* Tăng chiều cao hình ảnh */
+            object-fit: cover;
+            width: 100%;
+            height: 200px;
+        }
+
+        .recommended-product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            height: 30px; /* Tăng chiều cao tiêu đề */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal; /* Cho phép ngắt dòng */
+        }
+
+        .recommended-old-price {
+            color: #6c757d;
+            text-decoration: line-through;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        .recommended-new-price {
+            color: #dc3545;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .recommended-product-rating {
+            color: #fbc02d;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .recommended-stock {
+            font-size: 14px;
+            color: #28a745;
+            margin-top: 5px;
+        }
+
+        .recommended-add-to-cart {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px; /* Tăng padding để làm dài card */
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .recommended-add-to-cart:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+
+        .recommended-add-to-cart i {
+            margin-right: 5px;
+        }
+
+        .recommended-purchase-info {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .recommended-purchase-info i {
+            color: #17a2b8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .recommended-product-title {
+                font-size: 14px;
+                height: auto;
+            }
+
+            .recommended-new-price {
+                font-size: 14px;
+            }
+
+            .recommended-add-to-cart {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        
+            
+        <!-- Danh Sách Sản Phẩm Đề Xuất -->
+        <div class="container py-5">
+            <div class="recommended-section">
+                <div class="section-title">Sản Phẩm Đề Xuất</div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                    <!-- Sản phẩm 1 -->
+                    <div class="col">
+                        <div class="recommended-product-card">
+                            <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Sản phẩm 1">
+                            <div class="recommended-product-title" title="Sản phẩm 1">Sản phẩm 1</div>
+                            <div class="recommended-product-prices">
+                                <span class="recommended-new-price">18.000.000 VND</span>
+                            </div>
+                            <div class="recommended-purchase-info">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>150 mua</span>
+                            </div>
+                            <div class="recommended-product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i> (120 đánh giá)
+                            </div>
+                            <div class="recommended-stock">
+                                Còn hàng: 25
+                            </div>
+                            <a href="#" class="recommended-add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Thêm vào giỏ</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 2 -->
+                    <div class="col">
+                        <div class="recommended-product-card">
+                            <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Sản phẩm 2">
+                            <div class="recommended-product-title" title="Sản phẩm 2">Sản phẩm 2</div>
+                            <div class="recommended-product-prices">
+                                <span class="recommended-old-price">15.000.000 VND</span>
+                                <span class="recommended-new-price">13.500.000 VND</span>
+                            </div>
+                            <div class="recommended-purchase-info">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>85 mua</span>
+                            </div>
+                            <div class="recommended-product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i> (85 đánh giá)
+                            </div>
+                            <div class="recommended-stock">
+                                Còn hàng: 40
+                            </div>
+                            <a href="#" class="recommended-add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Thêm vào giỏ</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 3 -->
+                    <div class="col">
+                        <div class="recommended-product-card">
+                            <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Sản phẩm 3">
+                            <div class="recommended-product-title" title="Sản phẩm 3">Sản phẩm 3</div>
+                            <div class="recommended-product-prices">
+                                <span class="recommended-old-price">10.000.000 VND</span>
+                                <span class="recommended-new-price">9.500.000 VND</span>
+                            </div>
+                            <div class="recommended-purchase-info">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>200 mua</span>
+                            </div>
+                            <div class="recommended-product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i> (200 đánh giá)
+                            </div>
+                            <div class="recommended-stock">
+                                Còn hàng: 60
+                            </div>
+                            <a href="#" class="recommended-add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Thêm vào giỏ</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 4 -->
+                    <div class="col">
+                        <div class="recommended-product-card">
+                            <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Sản phẩm 4">
+                            <div class="recommended-product-title" title="Sản phẩm 4">Sản phẩm 4</div>
+                            <div class="recommended-product-prices">
+                                <span class="recommended-old-price">12.000.000 VND</span>
+                                <span class="recommended-new-price">11.000.000 VND</span>
+                            </div>
+                            <div class="recommended-purchase-info">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>60 mua</span>
+                            </div>
+                            <div class="recommended-product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i> (60 đánh giá)
+                            </div>
+                            <div class="recommended-stock">
+                                Còn hàng: 30
+                            </div>
+                            <a href="#" class="recommended-add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Thêm vào giỏ</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 5 -->
+                    <div class="col">
+                        <div class="recommended-product-card">
+                            <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Sản phẩm 5">
+                            <div class="recommended-product-title" title="Sản phẩm 5">Sản phẩm 5</div>
+                            <div class="recommended-product-prices">
+                                <span class="recommended-old-price">25.000.000 VND</span>
+                                <span class="recommended-new-price">22.000.000 VND</span>
+                            </div>
+                            <div class="recommended-purchase-info">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>300 mua</span>
+                            </div>
+                            <div class="recommended-product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i> (300 đánh giá)
+                            </div>
+                            <div class="recommended-stock">
+                                Còn hàng: 50
+                            </div>
+                            <a href="#" class="recommended-add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Thêm vào giỏ</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 6 -->
+                    <div class="col">
+                        <div class="recommended-product-card">
+                            <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Sản phẩm 6">
+                            <div class="recommended-product-title" title="Sản phẩm 6">Sản phẩm 6</div>
+                            <div class="recommended-product-prices">
+                                <span class="recommended-old-price">14.000.000 VND</span>
+                                <span class="recommended-new-price">12.000.000 VND</span>
+                            </div>
+                            <div class="recommended-purchase-info">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>140 mua</span>
+                            </div>
+                            <div class="recommended-product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i> (140 đánh giá)
+                            </div>
+                            <div class="recommended-stock">
+                                Còn hàng: 35
+                            </div>
+                            <a href="#" class="recommended-add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Thêm vào giỏ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
