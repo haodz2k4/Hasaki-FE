@@ -1,0 +1,210 @@
+body {
+  display: flex;
+  margin: 0; /* Xóa margin mặc định */
+  height: 100vh; /* Chiều cao đầy đủ */
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.right {
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  background-color: #e0e0e0; /* Màu nền cho div bên phải */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thongtintaikhoan {
+  /* border: 2px solid red; */
+  width: 85%;
+  height: 80vh; /* Chiều cao của khối thông tin tài khoản */
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden; /* Ẩn các phần bị tràn */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #edecec;
+}
+
+.thongtintaikhoan-a {
+  /* border-right: 2px solid red; Ngăn cách giữa hai phần */
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Để tiêu đề nằm trên cùng */
+}
+
+.tttk-header {
+  text-align: center;
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+.tttk-content {
+  display: flex;
+  flex-direction: row; /* Xếp icon và info theo chiều ngang */
+  align-items: flex-start; /* Đưa icon lên phía trên */
+  width: 100%;
+}
+
+.tttk-icon {
+  width: 20%; /* Kích thước icon */
+  /* Khoảng cách giữa icon và info */
+  margin-top: 20px;
+  padding-right: 0px;
+}
+
+.rounded-circle {
+  width: 100%;
+}
+
+.tttk-info {
+  width: 80%; /* Chiếm nhiều không gian hơn */
+  height: 60vh; /* Chiều cao 100% trừ đi padding, điều chỉnh theo nhu cầu */
+  padding: 20px; /* Thêm khoảng cách bên trong cho ttkt-info */
+  box-sizing: border-box; /* Đảm bảo padding không gây tràn */
+  overflow: auto; /* Cuộn nếu nội dung quá dài */
+  padding-top: 0px;
+  font-size: 18px;
+}
+
+.info-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Đảm bảo form chiếm toàn bộ chiều rộng */
+}
+
+label {
+  margin: 10px 0 5px;
+  width: 100%; /* Chiều rộng của label */
+  margin-top: 15px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='date'] {
+  padding: 12px; /* Tăng padding để nhìn thoải mái hơn */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Độ rộng 100% để kéo dài hơn */
+  box-sizing: border-box; /* Đảm bảo padding không gây tràn */
+}
+
+input[type='checkbox'] {
+  margin-right: 5px;
+}
+
+.btn-update {
+  margin-top: 5px;
+  padding: 12px; /* Tăng padding cho nút cập nhật */
+  background-color: #cccccc;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 30%; /* Để nút cập nhật rộng theo form */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.btn-update:hover {
+  background-color: #0056b3;
+  color: White;
+}
+
+.tttk-right {
+  width: 50%;
+  padding: 15px; /* Thêm khoảng cách bên trong */
+  font-size: 20px;
+}
+
+.phone-section,
+.email-section,
+.security-section {
+  display: flex; /* Sử dụng Flexbox để căn chỉnh */
+  justify-content: space-between; /* Tách phần tử bên trái và bên phải */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.btn-link {
+  width: 30%;
+  margin-top: 5px;
+  padding: 8px;
+  background-color: #28a745; /* Màu xanh lá cho nút liên kết */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-link:hover {
+  background-color: #218838; /* Hiệu ứng hover cho nút liên kết */
+}
+
+.social-section {
+  margin-top: 20px; /* Khoảng cách trên */
+}
+
+.social-item {
+  display: flex; /* Sử dụng Flexbox */
+  justify-content: space-between; /* Tách phần tử bên trái và bên phải */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin-bottom: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.btn-link:hover {
+  background-color: #0056b3;
+}
+
+/* Để nút liên kết nằm dưới tên */
+.social-item span {
+  display: block; /* Đặt span xuống dòng */
+}
+
+.social-item i {
+  color: #0056b3; /* Màu cho biểu tượng mạng xã hội */
+}
+
+.email-section i,
+.phone-section i,
+.security-section i {
+  color: black; /* Màu cho biểu tượng điện thoại và email */
+}
+
+/* Thay đổi màu sắc khi hover cho các biểu tượng */
+.social-item:hover i {
+  color: #218838; /* Màu khi hover biểu tượng mạng xã hội */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .thongtintaikhoan {
+    flex-direction: column; /* Chuyển đổi bố cục sang cột */
+    width: 95%; /* Đảm bảo chiều rộng đủ */
+    height: auto; /* Chiều cao tự động */
+  }
+
+  .tttk-right,
+  .thongtintaikhoan-a {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+  }
+
+  .tttk-content {
+    flex-direction: column; /* Chuyển đổi hướng xếp hàng của nội dung */
+    align-items: center; /* Căn giữa nội dung */
+  }
+
+  .tttk-icon {
+    width: 100%; /* Đảm bảo icon chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa icon */
+  }
+
+  .tttk-info {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+  }
+
+  .btn-update {
+    width: 100%; /* Mở rộng nút cập nhật */
+  }
+
+  .btn-link {
+    width: 100%; /* Mở rộng nút liên kết */
+  }
+}

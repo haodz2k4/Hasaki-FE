@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="./productdetail.css" />
+
+    <script>
+      function changeImage(thumbnail) {
+        const mainImage = document.getElementById('mainImage');
+        const tempSrc = mainImage.src;
+        mainImage.src = thumbnail.src;
+        thumbnail.src = tempSrc;
+      }
+
+      function showOverlay(imageSrc) {
+        const overlay = document.getElementById('imageOverlay');
+        const overlayImage = document.getElementById('overlayImage');
+        overlayImage.src = imageSrc;
+        overlay.style.display = 'flex';
+      }
+
+      function hideOverlay() {
+        const overlay = document.getElementById('imageOverlay');
+        overlay.style.display = 'none';
+      }
+
+      function changeOverlayImage(thumbnail) {
+        const overlayImage = document.getElementById('overlayImage');
+        overlayImage.src = thumbnail.src;
+      }
+
+      // Thiết lập thời gian kết thúc (ví dụ: sau 12 giờ từ hiện tại)
+      const countdownDate = new Date().getTime() + 12 * 60 * 60 * 1000; // 12 giờ từ bây giờ
+
+      const timer = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        // Tính toán giờ, phút, giây còn lại
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Hiển thị đồng hồ đếm ngược
+        document.getElementById('countdown-timer').innerHTML =
+          '0 : ' +
+          (hours < 10 ? '0' + hours : hours) +
+          ' : ' +
+          (minutes < 10 ? '0' + minutes : minutes) +
+          ' : ' +
+          (seconds < 10 ? '0' + seconds : seconds);
+
+        // Nếu hết thời gian, dừng đồng hồ và hiển thị thông báo
+        if (distance < 0) {
+          clearInterval(timer);
+          document.getElementById('countdown-timer').innerHTML = 'Hết giờ';
+        }
+      }, 1000);
+
+      function changeColor(color) {
+        document.getElementById('selectedColor').innerText = color;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Phần Hình Ảnh -->
+      <div class="image-gallery">
+        <img
+          id="mainImage"
+          src="https://media.hcdn.vn/rating/161828416317173.jpg"
+          alt="Main Image"
+          class="main-image"
+          onclick="showOverlay(this.src)"
+        />
+        <div class="thumbnail-images">
+          <img
+            src="https://media.hcdn.vn/rating/171006510389710.jpg"
+            alt="Thumbnail 1"
+            onclick="changeImage(this)"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/158963681811690.jpg"
+            alt="Thumbnail 2"
+            onclick="changeImage(this)"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/161828416317171.jpg"
+            alt="Thumbnail 3"
+            onclick="changeImage(this)"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/161828416317170.jpg"
+            alt="Thumbnail 4"
+            onclick="changeImage(this)"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/161828416317173.jpg"
+            alt="Thumbnail 5"
+            onclick="changeImage(this)"
+          />
+        </div>
+      </div>
+
+      <!-- Phần Chi Tiết Sản Phẩm -->
+      <div class="product-details">
+        <div class="product-title">
+          Sữa Chống Nắng Sunplay Hiệu Chỉnh Sắc Da 50g (Hồng) Skin Aqua Tone Up
+          UV Milk Happiness Aura (Rose) SPF50+ PA++++
+        </div>
+
+        <button class="product-code">
+          Số công bố với Bộ Y Tế: 355/23/CBMP-BD
+        </button>
+
+        <div class="countdown">
+          <span class="flash-deal">
+            <span class="flash-icon">⚡</span> Flash Deal! Kết thúc trong:
+          </span>
+          <span id="countdown-timer" class="countdown-timer"
+            >0 : 00 : 00 : 00</span
+          >
+        </div>
+
+        <div class="product-price">
+          <span class="current-price">149.000 ₫</span> (Đã bao gồm VAT)<br />
+          Giá thị trường: <span class="old-price">199.000 ₫</span> - Tiết kiệm:
+          50.000 ₫ <span class="discount">(-25%)</span>
+        </div>
+
+        <div class="product-color">
+          <label>Color: </label>
+          <span id="selectedColor">Tím</span>
+        </div>
+
+        <!-- Hình ảnh chọn màu -->
+        <div class="color-options">
+          <img
+            src="https://via.placeholder.com/50/800080/FFFFFF?text=Tím"
+            alt="Tím"
+            class="color-option-img"
+            onclick="changeColor('Tím')"
+          />
+          <img
+            src="https://via.placeholder.com/50/0000FF/FFFFFF?text=Xanh"
+            alt="Xanh"
+            class="color-option-img"
+            onclick="changeColor('Xanh')"
+          />
+          <img
+            src="https://via.placeholder.com/50/FFC0CB/FFFFFF?text=Hồng"
+            alt="Hồng"
+            class="color-option-img"
+            onclick="changeColor('Hồng')"
+          />
+          <img
+            src="https://via.placeholder.com/50/FFA500/FFFFFF?text=Cam"
+            alt="Cam"
+            class="color-option-img"
+            onclick="changeColor('Cam')"
+          />
+        </div>
+
+        <div class="product-quantity">
+          <label for="quantity">Số lượng: </label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1"
+            min="1"
+            style="width: 35px; background-color: #e8e8e8"
+          />
+        </div>
+
+        <div class="delivery-info">
+          <strong>Giao Nhanh Miễn Phí 2H tại 220 Chi Nhánh:</strong>
+          <p>
+            Bạn muốn nhận hàng trước 12h hôm nay (Miễn phí). Đặt hàng trong 38
+            phút tới và chọn giao hàng 2H ở bước thanh toán.
+            <a href="#">Xem chi tiết</a>
+          </p>
+        </div>
+
+        <div class="button-container">
+          <button class="cart-button">
+            <i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ Hàng
+          </button>
+          <button class="buy-button">Mua Ngay</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay for larger image -->
+    <div id="imageOverlay" class="image-overlay" onclick="hideOverlay()">
+      <div class="overlay-content">
+        <img id="overlayImage" src="" alt="Overlay Image" />
+        <div class="overlay-thumbnails">
+          <img
+            src="https://media.hcdn.vn/rating/171006510389710.jpg"
+            alt="Thumbnail 1"
+            onclick="changeOverlayImage(this); event.stopPropagation();"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/158963681811690.jpg"
+            alt="Thumbnail 2"
+            onclick="changeOverlayImage(this); event.stopPropagation();"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/161828416317171.jpg"
+            alt="Thumbnail 3"
+            onclick="changeOverlayImage(this); event.stopPropagation();"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/161828416317170.jpg"
+            alt="Thumbnail 4"
+            onclick="changeOverlayImage(this); event.stopPropagation();"
+          />
+          <img
+            src="https://media.hcdn.vn/rating/161828416317173.jpg"
+            alt="Thumbnail 5"
+            onclick="changeOverlayImage(this); event.stopPropagation();"
+          />
+        </div>
+      </div>
+    </div>
+    <nav style="width: 82%; margin-top: 10px; margin-bottom: 10px">
+      <ul>
+        <li><a href="#thong-tin">Thông tin</a></li>
+        <li><a href="#thong-so">Thông số</a></li>
+        <li><a href="#thanh-phan">Thành phần</a></li>
+        <li><a href="#cach-dung">Cách dùng</a></li>
+      </ul>
+    </nav>
+
+    <div class="container2">
+      <!-- Phần Hình Ảnh -->
+
+      <!-- Thumbnails omitted for brevity -->
+
+      <!-- Phần Chi Tiết Sản Phẩm -->
+      <div class="product-details">
+        <!-- Countdown omitted for brevity -->
+
+        <!-- Phần nội dung sản phẩm -->
+        <section id="thongtin">
+          <p>
+            <span style="font-weight: bold; color: #000">
+              Nước Tẩy Trang Dành Cho Da Nhạy Cảm Bioderma Sensibio H2O nước tẩy
+              trang công nghệ Micellar đầu tiên trên thế giới
+            </span>
+            là sản phẩm nước tẩy trang công nghệ Micellar đầu tiên trên thế
+            giới, do thương hiệu dược mỹ phẩm Bioderma nổi tiếng của Pháp phát
+            minh. Dung dịch giúp làm sạch sâu da và loại bỏ lớp trang điểm nhanh
+            chóng mà không cần rửa lại bằng nước. Công thức dịu nhẹ, không kích
+            ứng, không gây khô căng da, đặc biệt phù hợp với làn da nhạy cảm.
+          </p>
+          <div
+            style="text-align: center; margin-top: 30px; margin-bottom: 30px"
+          >
+            <img
+              src="https://media.hcdn.vn/wysiwyg/HaNguyen/nuoc-tay-trang-bioderma-danh-cho-da-nhay-cam-1_1.jpg"
+              alt="Nước Tẩy Trang Bioderma"
+              style="
+                display: block;
+                margin: 0 auto;
+                max-width: 80%;
+                height: 70vh;
+              "
+            />
+          </div>
+          <p>
+            <a
+              href="#"
+              style="color: #228b22; font-weight: bold; text-decoration: none"
+              >DA NHẠY CẢM</a
+            >
+            đến da không dung nạp không thể thực hiện vai trò của mình như một
+            hàng rào bảo vệ chống lại các tác nhân gây kích ứng. Lớp trang điểm,
+            việc tẩy trang, sự ô nhiễm, các tác động từ bên ngoài khiến làn da
+            bị yếu đi và trở nên khô căng ngày này qua ngày khác. Da nhạy cảm
+            biểu hiện thông qua cảm giác nóng, khó chịu và mẩn đỏ lan rộng hoặc
+            cục bộ. Da dễ bị mất nước và tình trạng da khô kéo dài sẽ tự động
+            duy trì độ mỏng manh của làn da, dẫn đến cảm giác khô căng khó chịu.
+            Tình trạng da nhạy cảm quá mức có thể chỉ xảy ra tạm thời hoặc vĩnh
+            viễn.
+          </p>
+
+          <p>
+            Công nghệ micellar sử dụng các hạt micelles "thần kì" tương thích
+            hoàn hảo với lớp lipid tự nhiên của da. Yếu tố cấu thành nên hạt
+            micelle là các ester acid béo, tương tự như cấu trúc lớp
+            phospholipid của màng tế bào da, giúp tái tạo lớp màng hydrolipid
+            của da một cách tự nhiên. Nhờ vào cấu trúc này, các hạt micelle sẽ
+            giúp lấy đi các yếu tố có hại cho làn da như:
+          </p>
+
+          <ul>
+            <li>
+              98% bụi siêu mịn khỏi bề mặt da và sâu bên trong lỗ chân lông.
+            </li>
+            <li>78% kim loại nặng và độc tố gây hại.</li>
+            <li>99% lớp trang điểm sâu bên trong.</li>
+          </ul>
+
+          <div
+            style="text-align: center; margin-top: 30px; margin-bottom: 30px"
+          >
+            <img
+              src="https://media.hcdn.vn/wysiwyg/HaNguyen/nuoc-tay-trang-bioderma-danh-cho-da-nhay-cam-3_1.jpg"
+              alt="Nước Tẩy Trang Bioderma"
+              style="
+                display: block;
+                margin: 0 auto;
+                max-width: 90%;
+                height: 70vh;
+              "
+            />
+          </div>
+          <p>
+            Sensibio H2O được bào chế với độ pH sinh lý khoảng 5.5 tương tự như
+            độ pH của làn da, do đó giúp nâng niu sự cân bằng về mặt sinh học -
+            điều cần thiết để duy trì làn da khỏe mạnh. Bên cạnh đó, sản phẩm
+            chứa thành phần nước tinh khiết, đạt chuẩn dược phẩm và một hợp chất
+            bao gồm 3 loại đường mô phỏng sinh học có công dụng làm dịu và ngăn
+            ngừa các phản ứng viêm. Việc lựa chọn cẩn thận các thành phần đảm
+            bảo khả năng dung nạp hoàn hảo và loại bỏ bất kỳ nguy cơ gây tổn
+            thương da nào của sản phẩm.
+          </p>
+        </section>
+
+        <section id="thong-so">
+          <h2>Thông số</h2>
+          <table
+            style="width: 100%; border-collapse: collapse; margin-top: 20px"
+          >
+            <tr>
+              <th
+                style="border: 1px solid #ddd; padding: 8px; text-align: left"
+              >
+                Thông Tin
+              </th>
+              <th
+                style="border: 1px solid #ddd; padding: 8px; text-align: left"
+              >
+                Chi Tiết
+              </th>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">Barcode</td>
+              <td style="border: 1px solid #ddd; padding: 8px">
+                3401345935571
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">Thương Hiệu</td>
+              <td style="border: 1px solid #ddd; padding: 8px">Bioderma</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">
+                Xuất xứ thương hiệu
+              </td>
+              <td style="border: 1px solid #ddd; padding: 8px">Pháp</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">Nơi sản xuất</td>
+              <td style="border: 1px solid #ddd; padding: 8px"></td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">Loại da</td>
+              <td style="border: 1px solid #ddd; padding: 8px">Da nhạy cảm</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">
+                Đặc điểm sản phẩm
+              </td>
+              <td style="border: 1px solid #ddd; padding: 8px">
+                Công nghệ Micellar, dịu nhẹ, không gây kích ứng
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">Dung tích</td>
+              <td style="border: 1px solid #ddd; padding: 8px">
+                100ml, 250ml, 500ml
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section id="thanh-phan">
+          <p style="font-weight: bold">Thành phần chính:</p>
+
+          <p style="margin-bottom: 10px; margin-left: 20px">
+            <span style="margin-left: 10px">.</span>
+            <strong>Công nghệ Micellar:</strong> Các hạt micelle, có thành phần
+            được lấy cảm hứng từ lipid của da, là những hạt làm sạch vô hình
+            siêu nhỏ. Chúng có khả năng thu giữ các tạp chất trong khi vẫn duy
+            trì lớp màng bảo vệ tự nhiên của da.
+          </p>
+
+          <p style="margin-bottom: 10px; margin-left: 20px">
+            <span style="margin-left: 10px">.</span>
+            <strong>Sáng chế D.A.F.:</strong> Các tác động từ bên ngoài có thể
+            làm cho da trở nên kích ứng và nhạy cảm. Hợp chất này giúp làm tăng
+            khả năng dung nạp của làn da - bất kể đối với loại da nào - nhằm
+            tăng cường sức đề kháng cho da.
+          </p>
+
+          <p style="font-weight: bold; margin-bottom: 10px">
+            Thành phần chi tiết:
+          </p>
+          <p>
+            Aqua/Water/Eau, Peg-6 Caprylic/Capric Glycerides,
+            Fructooligosaccharides, Mannitol, Xylitol, Rhamnose, Cucumis Sativus
+            (Cucumber) Fruit Extract, Propylene Glycol, Cetrimonium Bromide,
+            Disodium Edta. [Bi 446]
+          </p>
+        </section>
+
+        <section id="cach-dung">
+          <p style="font-weight: bold">Cách dùng:</p>
+          <ul>
+            <li>Thấm Sensibio H2O lên bông tẩy trang.</li>
+            <li>Nhẹ nhàng làm sạch vùng mặt và mắt.</li>
+            <li>Không cần rửa lại với nước.</li>
+            <li>Sử dụng hàng ngày để làm sạch da.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

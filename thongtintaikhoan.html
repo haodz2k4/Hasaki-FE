@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông Tin Tài Khoản</title>
+    <link rel="stylesheet" href="thongtintaikhoan.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="right">
+      <div class="thongtintaikhoan">
+        <div class="thongtintaikhoan-a">
+          <h1 class="tttk-header">Thông tin tài khoản</h1>
+          <div class="tttk-content">
+            <div class="tttk-icon">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="Icon"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="tttk-info">
+              <div class="info-form">
+                <label for="username">Tên tài khoản:</label>
+                <input type="text" id="username" value="Kha Tran" />
+
+                <label>Giới tính:</label>
+                <div>
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    checked
+                  />
+                  <label for="male">Nam</label>
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                  />
+                  <label for="female">Nữ</label>
+                </div>
+
+                <label for="dob">Ngày sinh:</label>
+                <input type="date" id="dob" />
+
+                <div style="margin-top: 15px">
+                  <input type="checkbox" id="promotions" />
+                  <label
+                    for="promotions"
+                    style="font-size: 18px; padding-top: 10px"
+                    >Nhận thông tin khuyến mãi</label
+                  >
+                </div>
+
+                <button
+                  type="button"
+                  class="btn-update"
+                  style="
+                    width: 100%;
+                    background-color: #078734;
+                    color: rgb(255, 255, 255);
+                    margin-top: 20px;
+                    border-radius: 20px;
+                  "
+                >
+                  Cập nhật
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tttk-right">
+          <h3>Số điện thoại và Email</h3>
+          <div class="phone-section">
+            <div>
+              <label for="phone">
+                <i
+                  class="fas fa-phone"
+                  style="font-size: 20px; margin-right: 5px"
+                ></i>
+                Số điện thoại:
+              </label>
+              <p style="font-size: 12px; color: #777">Cập nhật số điện thoại</p>
+            </div>
+            <button
+              type="button"
+              class="btn-update"
+              onclick="window.location.href='your-new-page.html'"
+            >
+              Cập nhật
+            </button>
+          </div>
+
+          <div class="email-section">
+            <label>
+              <i
+                class="fas fa-envelope"
+                style="font-size: 20px; margin-right: 5px"
+              ></i>
+              Email:
+            </label>
+            <p>trankha1882k4@gmail.com</p>
+          </div>
+
+          <div class="security-section">
+            <label>
+              <i
+                class="fas fa-lock"
+                style="font-size: 20px; margin-right: 5px"
+              ></i>
+              Đổi mật khẩu
+            </label>
+            <button type="button" class="btn-update" style="width: 40%">
+              Đổi mật khẩu
+            </button>
+          </div>
+
+          <h4 style="margin-top: 60px">Liên kết mạng xã hội</h4>
+          <div class="social-section">
+            <div class="social-item">
+              <span>
+                <i
+                  class="fab fa-facebook"
+                  style="font-size: 20px; margin-right: 5px"
+                ></i>
+                Facebook
+              </span>
+              <button type="button" class="btn-link">Liên kết</button>
+            </div>
+            <div class="social-item">
+              <span>
+                <i
+                  class="fab fa-google"
+                  style="font-size: 20px; margin-right: 5px; color: #db4437"
+                ></i>
+                Google
+              </span>
+              <button type="button" class="btn-link">Liên kết</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
