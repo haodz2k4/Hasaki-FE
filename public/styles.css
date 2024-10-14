@@ -722,3 +722,53 @@
 	float: right;
 }
 /* Footer end */
+
+/* CART CSS 15.10 */
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-image {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.total {
+    font-size: 1.2em;
+    text-align: right;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    table, th, td {
+        font-size: 14px;
+    }
+}
