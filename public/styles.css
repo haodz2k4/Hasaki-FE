@@ -9,6 +9,7 @@
     line-height: 1.2;
     /* Giảm khoảng trống trong header */
 }
+
 .navbar .search-bar {
     flex-grow: 2;
     /* Để thanh tìm kiếm chiếm nhiều không gian hơn */
@@ -463,6 +464,7 @@
     padding-bottom: 10px;
     text-align: center;
 }
+
 .recommended-product-card {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -483,7 +485,8 @@
 
 .recommended-product-card img {
     border-radius: 10px;
-    max-height: 300px; /* Tăng chiều cao hình ảnh */
+    max-height: 300px;
+    /* Tăng chiều cao hình ảnh */
     object-fit: cover;
     width: 100%;
     height: 200px;
@@ -493,10 +496,12 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
-    height: 30px; /* Tăng chiều cao tiêu đề */
+    height: 30px;
+    /* Tăng chiều cao tiêu đề */
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal; /* Cho phép ngắt dòng */
+    white-space: normal;
+    /* Cho phép ngắt dòng */
 }
 
 .recommended-old-price {
@@ -530,7 +535,8 @@
     gap: 5px;
     background-color: #007bff;
     color: white;
-    padding: 10px 15px; /* Tăng padding để làm dài card */
+    padding: 10px 15px;
+    /* Tăng padding để làm dài card */
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
@@ -579,146 +585,185 @@
         font-size: 14px;
     }
 }
+
 /*END RECOMMEND PRODUCT*/
 
 /* Footer */
 
 .footer {
-	background: #F3F6FA;
-	padding-top: 70px;
-	padding-bottom: 0;
+    background: #F3F6FA;
+    padding-top: 70px;
+    padding-bottom: 0;
     margin: 0;
     width: 100%;
 }
 
-.footer__about {
-	
-}
+.footer__about {}
 
 .footer__about ul li {
-	font-size: 16px;
-	color: #1c1c1c;
-	line-height: 36px;
-	list-style: none;
+    font-size: 16px;
+    color: #1c1c1c;
+    line-height: 36px;
+    list-style: none;
 }
 
 .footer__about__logo {
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .footer__about__logo a {
-	display: inline-block;
+    display: inline-block;
 }
 
 .footer__widget {
-	margin-bottom: 30px;
-	overflow: hidden;
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 
 .footer__widget h6 {
-    margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và danh sách */
+    margin-bottom: 10px;
+    /* Khoảng cách giữa tiêu đề và danh sách */
     color: #1c1c1c;
     font-weight: 700;
 }
 
 .footer__widget ul {
-	width: 50%;
-	float: left;
+    width: 50%;
+    float: left;
 }
 
 .footer__widget ul li {
-	list-style: none;
+    list-style: none;
 }
 
 .footer__widget ul li a {
-	color: #1c1c1c;
-	font-size: 14px;
-	line-height: 32px;
+    color: #1c1c1c;
+    font-size: 14px;
+    line-height: 32px;
 }
 
 .footer__widget p {
-	font-size: 14px;
-	color: #1c1c1c;
-	margin-bottom: 30px;
+    font-size: 14px;
+    color: #1c1c1c;
+    margin-bottom: 30px;
 }
 
 .footer__widget form {
-	position: relative;
-	margin-bottom: 30px;
-    
+    position: relative;
+    margin-bottom: 30px;
+
 }
 
 .footer__widget form input {
-	width: 100%;
-	font-size: 16px;
-	padding-left: 20px;
-	color: #1c1c1c;
-	height: 46px;
-	border: 1px solid #ededed;
-    
+    width: 100%;
+    font-size: 16px;
+    padding-left: 20px;
+    color: #1c1c1c;
+    height: 46px;
+    border: 1px solid #ededed;
+
 }
 
 .footer__widget form input::placeholder {
-	color: #1c1c1c;
+    color: #1c1c1c;
 }
 
 .footer__widget form button {
-	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 0 26px;
-	height: 100%;
-    background-color: #336e5b; /* Màu nền cho nút */
-    color: #ffffff; /* Màu chữ cho nút */
-    border: none; /* Bỏ đường viền cho nút */
-    cursor: pointer; /* Thay đổi con trỏ khi hover */
-    border-radius: 5px; /* Bo tròn góc nếu cần */
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 26px;
+    height: 100%;
+    background-color: #336e5b;
+    /* Màu nền cho nút */
+    color: #ffffff;
+    /* Màu chữ cho nút */
+    border: none;
+    /* Bỏ đường viền cho nút */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    border-radius: 5px;
+    /* Bo tròn góc nếu cần */
 }
 
 .footer__widget .footer__widget__social a {
-	display: inline-block;
-	height: 41px;
-	width: 41px;
-	font-size: 16px;
-	color: #404040;
-	border: 1px solid #ededed;
-	border-radius: 50%;
-	line-height: 38px;
-	text-align: center;
-	background: #ffffff;
-	-webkit-transition: all, 0.3s;
-	-moz-transition: all, 0.3s;
-	-ms-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-	margin-right: 10px;
+    display: inline-block;
+    height: 41px;
+    width: 41px;
+    font-size: 16px;
+    color: #404040;
+    border: 1px solid #ededed;
+    border-radius: 50%;
+    line-height: 38px;
+    text-align: center;
+    background: #ffffff;
+    -webkit-transition: all, 0.3s;
+    -moz-transition: all, 0.3s;
+    -ms-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    transition: all, 0.3s;
+    margin-right: 10px;
 }
 
 .footer__widget .footer__widget__social a:last-child {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 .footer__widget .footer__widget__social a:hover {
-	background: #336e5b;
-	color: #ffffff;
-	border-color: #ffffff;
+    background: #336e5b;
+    color: #ffffff;
+    border-color: #ffffff;
 }
 
 .footer__copyright {
-	border-top: 1px solid #ebebeb;
-	padding: 15px 0;
-	overflow: hidden;
-	margin-top: 20px;
+    border-top: 1px solid #ebebeb;
+    padding: 15px 0;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .footer__copyright__text {
-	font-size: 14px;
-	color: #1c1c1c;
-	float: left;
-	line-height: 25px;
+    font-size: 14px;
+    color: #1c1c1c;
+    float: left;
+    line-height: 25px;
 }
 
 .footer__copyright__payment {
-	float: right;
+    float: right;
 }
+
 /* Footer end */
+
+/* info */
+/* Updated CSS for product information */
+.product-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.quantity-selector .form-control {
+    font-size: 1.1rem;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+.product-actions .btn {
+    font-size: 1rem;
+}
