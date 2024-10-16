@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasaki NavBar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./public/styles.css">
+    <!--FONT ANWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-green py-2">
+        <div class="container">
+            <!-- Brand Logo and Name -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://via.placeholder.com/40" alt="Logo" class="rounded-circle me-2">
+                <div class="brand-text">
+                    <span class="fw-bold">HASAKI.vn</span><br>
+                    <small>Chất lượng thật - Giá trị thật!</small>
+                </div>
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <!-- Search bar with icon inside input -->
+                    <li class="nav-item mx-2 search-bar position-relative">
+                        <form class="position-relative">
+                            <input class="form-control rounded-pill" type="search" placeholder="Tìm kiếm sản phẩm..."
+                                aria-label="Search" id="searchInput" oninput="showSuggestions()">
+                            <i class="bi bi-search position-absolute search-icon"></i>
+                            <!-- Suggestions Box -->
+                            <div class="suggestions-box d-none" id="suggestionsBox">
+                                <ul>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Deal 2K">
+                                        Deal 2K áp dụng CN215 Quảng Bình
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua Gì Cũng Rẻ">
+                                        Mua Gì Cũng Rẻ - Dưới 99K
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua 2 Giảm Nửa Giá">
+                                        Mua 2 Giảm Nửa Giá
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Giảm 200K">
+                                        Giảm 200K/Gói Triệt Lông Diode Laser
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Chống Nắng Da Mặt">
+                                        Chống Nắng Da Mặt
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Làm Sạch Da">
+                                        Làm Sạch Da
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </li>
+
+                    <!-- User Account -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white d-flex align-items-center" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person"></i> Chào Hào <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Store Locator -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-shop"></i> Hệ thống cửa hàng</a>
+                    </li>
+
+                    <!-- Customer Support -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-telephone"></i> Hỗ trợ khách hàng</a>
+                    </li>
+
+                    <!-- Cart with notification -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link position-relative text-white cart-icon" href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--End Header-->
+    <!-- NỘI DUNG ĐỂ Ở ĐÂY -->
+    
+    <h1>Nội dung để đây</h1>
+
+
+    <!------------------------>
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        
+                        <ul>
+                            <li>Hotline: 1800 6324</li>
+                            <li>(miễn phí , 08-22h kể cả T7, CN)</li>
+                            <li>Email: HASAKI@Gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Về HASAKI.VN</h6>
+                        <ul>
+                            <li><a href="#">Giới thiệu Hasaki.vn</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Điều khoản sử dụng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                       
+                        </ul>
+ 
+                        <ul>  
+                            <li><a href="#">Các câu hỏi thường gặp</a></li>
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                            <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                            <li><a href="#">Phương thức vận chuyển</a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                    
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Tham gia bản tin của chúng tôi ngay</h6>
+                        <p>Nhận thông báo qua E-mail về các sản phẩm mới nhất và các ưu đãi đặc biệt của chúng tôi.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Nhập địa chỉ email của bạn">
+                            <button type="submit" class="site-btn">Đăng ký</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tất cả các quyền được bảo lưu | Mẫu này được tạo ra <i class="fa fa-heart" aria-hidden="true"></i> bởi <a href="https://colorlib.com" target="_blank">HASAKI</a>
+
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+        
+
+        <script>
+            function showSuggestions() {
+                const searchInput = document.getElementById('searchInput').value;
+                const suggestionsBox = document.getElementById('suggestionsBox');
+
+                if (searchInput.length > 0) {
+                    suggestionsBox.classList.remove('d-none');
+                } else {
+                    suggestionsBox.classList.add('d-none');
+                }
+            }
+        </script>
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <script src="./public/assets/js/script.js"></script>
+</body>
+
+</html>
