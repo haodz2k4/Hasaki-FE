@@ -12,6 +12,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./public/styles.css">
+    <link rel="stylesheet" href="./public/profiles.css">
     <!--FONT ANWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -113,8 +114,118 @@
     <!--End Header-->
     <!-- NỘI DUNG ĐỂ Ở ĐÂY -->
     
-    <h1>Nội dung để đây</h1>
-
+    <div class="Kright">
+        <div class="Kthongtintaikhoan">
+          <div class="Kthongtintaikhoan-a">
+            <h1 class="Ktttk-header">Thông tin tài khoản</h1>
+            <div class="Ktttk-content">
+              <div class="Ktttk-icon">
+                <img
+                  src="https://via.placeholder.com/50"
+                  alt="Icon"
+                  class="Krounded-circle"
+                />
+              </div>
+              <div class="Ktttk-info">
+                <div class="Kinfo-form">
+                  <label for="username" class="Klabel">Tên tài khoản:</label>
+                  <input type="text" id="username" value="Kha Tran" class="Kinput-text" />
+  
+                  <label class="Klabel">Giới tính:</label>
+                  <div class="Klabel-gender" style="display: flex; color:black;align-items: center;">
+                    <input
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      value="male"
+                      checked
+                    />
+                    <label for="male" class="Klabel">Nam</label>
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="female"
+                    />
+                    <label for="female" class="Klabel">Nữ</label>
+                  </div>
+  
+                  <label for="dob" class="Klabel">Ngày sinh:</label>
+                  <input type="date" id="dob" class="Kinput-date" />
+  
+                  <div style="margin-top: 15px; display: flex; align-items: center;">
+                    <input type="checkbox" id="promotions" class="Kinput-checkbox" style="margin-right: 10px;">
+                    <label for="promotions" class="Klabel" style="font-size: 18px; margin-bottom: 15px;">Nhận thông tin khuyến mãi</label>
+                  </div>
+                  
+  
+                  <button
+                    type="button"
+                    class="Kbtn-update"
+                    style="width: 100%; background-color: #078734; color: white; margin-top: 20px; border-radius: 20px;"
+                  >
+                    Cập nhật
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="Ktttk-right">
+            <h3>Số điện thoại và Email</h3>
+            <div class="Kphone-section">
+              <div>
+                <label for="phone" class="Klabel">
+                  <i class="fas fa-phone" style="font-size: 20px; margin-right: 5px"></i>
+                  Số điện thoại:
+                </label>
+                <p style="font-size: 12px; color: #777">Cập nhật số điện thoại</p>
+              </div>
+              <button
+                type="button"
+                class="Kbtn-update"
+                onclick="window.location.href='your-new-page.html'"
+              >
+                Cập nhật
+              </button>
+            </div>
+  
+            <div class="Kemail-section">
+              <label class="Klabel">
+                <i class="fas fa-envelope" style="font-size: 20px; margin-right: 5px"></i>
+                Email:
+              </label>
+              <p>trankha1882k4@gmail.com</p>
+            </div>
+  
+            <div class="Ksecurity-section">
+              <label class="Klabel">
+                <i class="fas fa-lock" style="font-size: 20px; margin-right: 5px"></i>
+                Đổi mật khẩu
+              </label>
+              <button type="button" class="Kbtn-update" style="width: 40%">Đổi mật khẩu</button>
+            </div>
+  
+            <h4 style="margin-top: 60px">Liên kết mạng xã hội</h4>
+            <div class="Ksocial-section">
+              <div class="Ksocial-item">
+                <span>
+                  <i class="fab fa-facebook" style="font-size: 20px; margin-right: 5px"></i>
+                  Facebook
+                </span>
+                <button type="button" class="Kbtn-link">Liên kết</button>
+              </div>
+              <div class="Ksocial-item">
+                <span>
+                  <i class="fab fa-google" style="font-size: 20px; margin-right: 5px; color: #db4437"></i>
+                  Google
+                </span>
+                <button type="button" class="Kbtn-link">Liên kết</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!------------------------>
     <!-- Footer Section Begin -->
