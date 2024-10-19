@@ -1,16 +1,8 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #cccccc;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-}
+
 
 .container3 {
   display: flex;
   padding: 20px;
-  border: 1px solid black;
   background-color: white;
   width: 80%;
   height: 80%;
@@ -102,14 +94,6 @@ body {
   border: 1px solid #ddd;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #f15e2c;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px;
-}
 
 /* button:hover {
           background-color: #d9531e;
@@ -192,13 +176,13 @@ button {
   background-color: #f9f9f9; /* Màu nền */
   border: 1px solid #ddd; /* Viền */
 }
-nav {
+.nav-detail  {
   background-color: #f8f8f8; /* Màu nền của thanh điều hướng */
   padding: 10px;
   text-align: center;
 }
 
-nav ul {
+.nav-detail  ul {
   list-style: none; /* Loại bỏ dấu đầu dòng của danh sách */
   margin: 0;
   padding: 0;
@@ -207,23 +191,23 @@ nav ul {
   align-items: center;
 }
 
-nav ul li {
+.nav-detail  ul li {
   margin: 0 15px; /* Khoảng cách giữa các mục */
 }
 
-nav ul li:not(:last-child)::after {
+.nav-detail ul li:not(:last-child)::after {
   content: '|'; /* Thêm ký tự | giữa các mục */
   margin-left: 15px;
   color: #888; /* Màu sắc của dấu phân cách */
 }
 
-nav a {
+.nav-detail  a {
   text-decoration: none; /* Loại bỏ gạch chân */
   color: #333; /* Màu chữ của liên kết */
   font-weight: bold;
 }
 
-nav a:hover {
+.nav-detail  a:hover {
   color: #007bff; /* Màu chữ khi hover */
 }
 
