@@ -737,33 +737,13 @@
 
 /* info */
 /* Updated CSS for product information */
-.product-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.price {
-    font-size: 1.8rem;
+.product-list-title {
+    font-size: 18px;
+    text-align: start;
+    margin-left: 17px;
+    margin-top: 10px;
     font-weight: bold;
 }
-
-.product-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-.quantity-selector .form-control {
-    font-size: 1.1rem;
-    padding: 5px;
-    text-align: center;
-}
-
-.btn {
-    font-size: 1.1rem;
-    padding: 10px 20px;
-}
-
-.product-actions .btn {
-    font-size: 1rem;
+#show-keyword-result {
+    font-size: 25px;
 }

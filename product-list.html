@@ -114,52 +114,29 @@
     </nav>
     <!--End Header-->
 
-    <!-- Banner -->
-    <div class="banner-container">
-        <div class="banner-slide active">
-            <img src="./public/assets/banner1.png" alt="Slide 1">
-        </div>
-        <div class="banner-slide">
-            <img src="./public/assets/banner2.png" alt="Slide 2">
-        </div>
-        <div class="banner-slide">
-            <img src="./public/assets/banner3.png" alt="Slide 3">
-        </div>
-
-        <!-- Nút điều hướng -->
-        <button class="prev">
-            <i class="fas fa-arrow-left"></i>
-        </button>
-        <button class="next">
-            <i class="fas fa-arrow-right"></i>
-        </button>
-    </div>
+    
     <!--End Banner  -->
     <div class="container mt-4">
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="#">Danh mục sản phẩm</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
-            </ol>
-        </nav>
 
         <div class="row">
             <!-- Filter Sidebar -->
             <div class="col-md-3">
                 <div class="filter-sidebar">
-                    <div class="filter-title">Lọc sản phẩm</div>
                     <!-- Lọc theo giá -->
                     <div class="mb-3">
-                        <label for="priceRange" class="form-label">Khoảng giá</label>
-                        <select id="priceRange" class="form-select">
-                            <option value="0">Tất cả</option>
-                            <option value="1">Dưới 500.000đ</option>
-                            <option value="2">500.000đ - 1.000.000đ</option>
-                            <option value="3">Trên 1.000.000đ</option>
-                        </select>
+                        <h5>Khoảng giá </h5>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" id="minPrice" placeholder="Giá thấp nhất">
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" id="maxPrice" placeholder="Giá cao nhất">
+                            </div>
+                        </div> 
+                        
                     </div>
+                    <button class="btn btn-success w-100">Lọc</button>
+                    
                     <!-- Lọc theo nhãn hàng -->
                     <div class="mb-3">
                         <label for="brandSelect" class="form-label">Nhãn hàng</label>
@@ -176,13 +153,26 @@
             </div>
 
             <!-- Product Listing -->
+             
             <div class="col-md-9">
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <p id="show-keyword-result">Kết quả tìm kiếm cho <strong>BAC</strong></p>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <select name="limit" class="form-control select-control small-select" id="product-limit" style="width: 120px; float: right;">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="row">
                     <!-- Product Item -->
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="product-recommend-card">
                             <img src="https://via.placeholder.com/150" alt="Product 1" class="img-fluid">
-                            <div class="product-title">Sản phẩm 1</div>
+                            <div class="product-list-title">Sản phẩm 1</div>
                             <div class="product-prices">
                                 <div class="product-old-price">500.000đ</div>
                                 <div class="product-new-price">300.000đ</div>
