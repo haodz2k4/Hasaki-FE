@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm - HASAKI.vn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./public/styles.css">
+    <style>
+        :root {
+            --primary-color: #00a86b;
+            --secondary-color: #333;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --light-gray: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .product-old-price {
+            font-size: 0.9rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .product-discount {
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .quick-view-btn {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            transition: bottom 0.3s ease;
+        }
+
+        .product-card:hover .quick-view-btn {
+            bottom: 0;
+        }
+
+        .filter-sidebar {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .sort-dropdown {
+            width: 200px;
+        }
+
+        .side-banner {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+        }
+
+        .side-banner-left {
+            left: 10px;
+        }
+
+        .side-banner-right {
+            right: 10px;
+        }
+
+        @media (max-width: 1400px) {
+            .side-banner {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-green py-2">
+        <div class="container">
+            <!-- Brand Logo and Name -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://via.placeholder.com/40" alt="Logo" class="rounded-circle me-2">
+                <div class="brand-text">
+                    <span class="fw-bold">HASAKI.vn</span><br>
+                    <small>Chất lượng thật - Giá trị thật!</small>
+                </div>
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <!-- Search bar with icon inside input -->
+                    <li class="nav-item mx-2 search-bar position-relative">
+                        <form class="position-relative">
+                            <input class="form-control rounded-pill" type="search" placeholder="Tìm kiếm sản phẩm..."
+                                aria-label="Search" id="searchInput" oninput="showSuggestions()">
+                            <i class="bi bi-search position-absolute search-icon"></i>
+                            <!-- Suggestions Box -->
+                            <div class="suggestions-box d-none" id="suggestionsBox">
+                                <ul>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Deal 2K">
+                                        Deal 2K áp dụng CN215 Quảng Bình
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua Gì Cũng Rẻ">
+                                        Mua Gì Cũng Rẻ - Dưới 99K
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua 2 Giảm Nửa Giá">
+                                        Mua 2 Giảm Nửa Giá
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Giảm 200K">
+                                        Giảm 200K/Gói Triệt Lông Diode Laser
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Chống Nắng Da Mặt">
+                                        Chống Nắng Da Mặt
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Làm Sạch Da">
+                                        Làm Sạch Da
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </li>
+
+                    <!-- User Account -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white d-flex align-items-center" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person"></i> Chào Hào <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Store Locator -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-shop"></i> Hệ thống cửa hàng</a>
+                    </li>
+
+                    <!-- Customer Support -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-telephone"></i> Hỗ trợ khách hàng</a>
+                    </li>
+
+                    <!-- Cart with notification -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link position-relative text-white cart-icon" href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--End Header-->
+    </header>
+
+    <div class="container">
+        <!-- Promotional Banner -->
+        <div class="row mb-4">
+            <div class="col">
+                <img src="public/assets/banner1.png" alt="Promotional Banner" class="img-fluid rounded"
+                    style="width: 100%; height: 100%;">
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Filter Sidebar -->
+            <div class="col-md-3 mb-4">
+                <div class="filter-sidebar">
+                    <div class="filter-title">Lọc sản phẩm</div>
+                    <div class="mb-3">
+                        <label for="categoryFilter" class="form-label">Danh mục</label>
+                        <select id="categoryFilter" class="form-select">
+                            <option value="all">Tất cả</option>
+                            <option value="skincare">Chăm sóc da</option>
+                            <option value="makeup">Trang điểm</option>
+                            <option value="haircare">Chăm sóc tóc</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="priceFilter" class="form-label">Khoảng giá</label>
+                        <select id="priceFilter" class="form-select">
+                            <option value="all">Tất cả</option>
+                            <option value="0-500000">Dưới 500.000đ</option>
+                            <option value="500000-1000000">500.000đ - 1.000.000đ</option>
+                            <option value="1000000+">Trên 1.000.000đ</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary w-100">Áp dụng</button>
+                </div>
+            </div>
+
+            <!-- Product Listing -->
+            <div class="col-md-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Danh sách sản phẩm</h2>
+                    <select class="form-select sort-dropdown">
+                        <option value="popularity">Phổ biến nhất</option>
+                        <option value="price-asc">Giá tăng dần</option>
+                        <option value="price-desc">Giá giảm dần</option>
+                        <option value="newest">Mới nhất</option>
+                    </select>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card position-relative">
+                        <img src="https://via.placeholder.com/200x200" alt="Sản phẩm <?php echo $i; ?>"
+                            class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Sản phẩm
+                                <?php echo $i; ?>
+                            </h3>
+                            <div class="d-flex align-items-center">
+                                <span class="product-price">
+                                    <?php echo number_format(rand(100000, 1000000)); ?>đ
+                                </span>
+                                <span class="product-old-price ms-2">
+                                    <?php echo number_format(rand(1000000, 2000000)); ?>đ
+                                </span>
+                                <span class="product-discount">-
+                                    <?php echo rand(10, 50); ?>%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="quick-view-btn">Xem nhanh</div>
+                    </div>
+                    <?php endfor; ?>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Product navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Trước</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Sau</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Change Page Button -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary btn-lg">Xem thêm sản phẩm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
