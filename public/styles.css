@@ -747,3 +747,149 @@
 #show-keyword-result {
     font-size: 25px;
 }
+<<<<<<< HEAD
+=======
+
+.quantity-selector .form-control {
+    font-size: 1.1rem;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+.product-actions .btn {
+    font-size: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #f8f9fa;
+    padding: 60px 0 30px;
+}
+
+.footer__widget__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.footer__about__logo img {
+    max-width: 150px;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #336e5b;
+}
+
+.footer__newsletter input {
+    border-radius: 20px;
+}
+
+.footer__newsletter button {
+    border-radius: 20px;
+    background-color: #336e5b;
+    border-color: #336e5b;
+}
+
+.footer__widget__social .social-icon {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #336e5b;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.footer__widget__social .social-icon:hover {
+    background-color: #264e41;
+}
+
+.footer__bottom {
+    border-top: 1px solid #e1e1e1;
+    padding-top: 20px;
+}
+
+.footer__copyright__payment img {
+    max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .footer__widget {
+        margin-bottom: 30px;
+    }
+}
+
+/* Mega Menu Styles */
+.mega-menu {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 0;
+    margin-top: 0;
+}
+
+.mega-menu h5 {
+    color: #336e5b;
+    margin-bottom: 10px;
+}
+
+.mega-menu ul li a {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.mega-menu ul li a:hover {
+    color: #336e5b;
+    text-decoration: none;
+}
+
+/* Search Suggestions Styles */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.search-suggestions ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-suggestions li:hover {
+    background-color: #f8f9fa;
+}
+>>>>>>> 42e49995b04f792259ec96d85d076fe936f25881

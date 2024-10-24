@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./public/styles.css">
+    <link rel="stylesheet" href="./public/cart.css">
     <!--FONT ANWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -113,7 +115,217 @@
     <!--End Header-->
     <!-- NỘI DUNG ĐỂ Ở ĐÂY -->
     
-    <h1>Nội dung để đây</h1>
+    <div class="container">
+        <div class="cart-container">
+            <!-- Header -->
+            <div class="cart-header row">
+                <div class="col-1 checkbox-col">
+                    <input type="checkbox" id="select-all">
+                </div>
+                <div class="col-5">Sản Phẩm</div>
+                <div class="col-2">Đơn Giá</div>
+                <div class="col-2">Số Lượng</div>
+                <div class="col-2">Số Tiền</div>
+            </div>
+
+            <div class="cart-items">
+                <!-- Item 1 -->
+                <div class="cart-item row align-items-center">
+                    <div class="col-1 checkbox-col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <img src="https://via.placeholder.com/100" alt="Product Image" class="product-image me-3">
+                        <div>
+                            <span class="deal-label">Deal Sốc</span>
+                            <div class="product-name">Áo thun oversize nam nữ cao cấp vải waffle hàng hiệu form rộng...</div>
+                            <span class="disabled-text">Phân loại hàng: Nâu, XL</span>
+                            <div class="stock-label mt-1">HẾT HÀNG</div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <del class="text-muted">₫230.000</del><br>
+                        <span class="price">₫139.000</span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control text-center" value="1" disabled>
+                    </div>
+                    <div class="col-1 price">₫139.000</div>
+                    <div class="col-1 action-col">
+                        <span class="delete-btn">Xóa</span>
+                    </div>
+                </div>
+
+                <div class="cart-item row align-items-center">
+                    <div class="col-1 checkbox-col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <img src="https://via.placeholder.com/100" alt="Product Image" class="product-image me-3">
+                        <div>
+                            <span class="deal-label">Deal Sốc</span>
+                            <div class="product-name">Áo thun oversize nam nữ cao cấp vải waffle hàng hiệu form rộng...</div>
+                            <span class="disabled-text">Phân loại hàng: Nâu, XL</span>
+                            <div class="stock-label mt-1">HẾT HÀNG</div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <del class="text-muted">₫230.000</del><br>
+                        <span class="price">₫139.000</span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control text-center" value="1" disabled>
+                    </div>
+                    <div class="col-1 price">₫139.000</div>
+                    <div class="col-1 action-col">
+                        <span class="delete-btn">Xóa</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="cart-item row align-items-center">
+                    <div class="col-1 checkbox-col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <img src="https://via.placeholder.com/100" alt="Product Image" class="product-image me-3">
+                        <div>
+                            <span class="deal-label">Deal Sốc</span>
+                            <div class="product-name">Áo thun oversize nam nữ cao cấp vải waffle hàng hiệu form rộng...</div>
+                            <span class="disabled-text">Phân loại hàng: Xám nhạt, XL</span>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <del class="text-muted">₫230.000</del><br>
+                        <span class="price">₫139.000</span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control text-center" value="1">
+                    </div>
+                    <div class="col-1 price">₫139.000</div>
+                    <div class="col-1 action-col">
+                        <span class="delete-btn">Xóa</span>
+                    </div>
+                </div>
+                <div class="cart-item row align-items-center">
+                    <div class="col-1 checkbox-col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <img src="https://via.placeholder.com/100" alt="Product Image" class="product-image me-3">
+                        <div>
+                            <span class="deal-label">Deal Sốc</span>
+                            <div class="product-name">Áo thun oversize nam nữ cao cấp vải waffle hàng hiệu form rộng...</div>
+                            <span class="disabled-text">Phân loại hàng: Xám nhạt, XL</span>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <del class="text-muted">₫230.000</del><br>
+                        <span class="price">₫139.000</span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control text-center" value="1">
+                    </div>
+                    <div class="col-1 price">₫139.000</div>
+                    <div class="col-1 action-col">
+                        <span class="delete-btn">Xóa</span>
+                    </div>
+                </div>
+                <div class="cart-item row align-items-center">
+                    <div class="col-1 checkbox-col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <img src="https://via.placeholder.com/100" alt="Product Image" class="product-image me-3">
+                        <div>
+                            <span class="deal-label">Deal Sốc</span>
+                            <div class="product-name">Áo thun oversize nam nữ cao cấp vải waffle hàng hiệu form rộng...</div>
+                            <span class="disabled-text">Phân loại hàng: Xám nhạt, XL</span>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <del class="text-muted">₫230.000</del><br>
+                        <span class="price">₫139.000</span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control text-center" value="1">
+                    </div>
+                    <div class="col-1 price">₫139.000</div>
+                    <div class="col-1 action-col">
+                        <span class="delete-btn">Xóa</span>
+                    </div>
+                </div>
+                <div class="cart-item row align-items-center">
+                    <div class="col-1 checkbox-col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <img src="https://via.placeholder.com/100" alt="Product Image" class="product-image me-3">
+                        <div>
+                            <span class="deal-label">Deal Sốc</span>
+                            <div class="product-name">Áo thun oversize nam nữ cao cấp vải waffle hàng hiệu form rộng...</div>
+                            <span class="disabled-text">Phân loại hàng: Xám nhạt, XL</span>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <del class="text-muted">₫230.000</del><br>
+                        <span class="price">₫139.000</span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control text-center" value="1">
+                    </div>
+                    <div class="col-1 price">₫139.000</div>
+                    <div class="col-1 action-col">
+                        <span class="delete-btn">Xóa</span>
+                    </div>
+                </div>
+                <div class="cart-item row align-items-center">
+                    <div class="col-1 checkbox-col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">
+                        <img src="https://via.placeholder.com/100" alt="Product Image" class="product-image me-3">
+                        <div>
+                            <span class="deal-label">Deal Sốc</span>
+                            <div class="product-name">Áo thun oversize nam nữ cao cấp vải waffle hàng hiệu form rộng...</div>
+                            <span class="disabled-text">Phân loại hàng: Xám nhạt, XL</span>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <del class="text-muted">₫230.000</del><br>
+                        <span class="price">₫139.000</span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control text-center" value="1">
+                    </div>
+                    <div class="col-1 price">₫139.000</div>
+                    <div class="col-1 action-col">
+                        <span class="delete-btn">Xóa</span>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="cart-footer">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <input type="checkbox" class="footer-checkbox" id="footer-select-all">
+                <span>Chọn Tất Cả (2)</span>
+                <a href="#" class="ms-3">Xóa</a>
+                <a href="#" class="ms-3">Bỏ sản phẩm không hoạt động</a>
+                <a href="#" class="ms-3 text-danger">Lưu vào mục Đã thích</a>
+            </div>
+            <div class="d-flex align-items-center">
+                <span>Tổng thanh toán (2 Sản phẩm):</span>
+                <span class="total-price ms-2">₫278.000</span>
+                <button class="btn btn-buy ms-3">Mua Hàng</button>
+            </div>
+        </div>
+    </div>
 
 
     <!------------------------>
