@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Aromatherapy Massage - Hasaki Spa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./public/styles.css">
+    <link rel="stylesheet" href="./public/spa-detail.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-green py-2">
+        <div class="container">
+            <!-- Brand Logo and Name -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://via.placeholder.com/40" alt="Logo" class="rounded-circle me-2">
+                <div class="brand-text">
+                    <span class="fw-bold">HASAKI.vn</span><br>
+                    <small>Chất lượng thật - Giá trị thật!</small>
+                </div>
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <!-- Search bar with icon inside input -->
+                    <li class="nav-item mx-2 search-bar position-relative">
+                        <form class="position-relative">
+                            <input class="form-control rounded-pill" type="search" placeholder="Tìm kiếm sản phẩm..."
+                                aria-label="Search" id="searchInput" oninput="showSuggestions()">
+                            <i class="bi bi-search position-absolute search-icon"></i>
+                            <!-- Suggestions Box -->
+                            <div class="suggestions-box d-none" id="suggestionsBox">
+                                <ul>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Deal 2K">
+                                        Deal 2K áp dụng CN215 Quảng Bình
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua Gì Cũng Rẻ">
+                                        Mua Gì Cũng Rẻ - Dưới 99K
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Mua 2 Giảm Nửa Giá">
+                                        Mua 2 Giảm Nửa Giá
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Giảm 200K">
+                                        Giảm 200K/Gói Triệt Lông Diode Laser
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Chống Nắng Da Mặt">
+                                        Chống Nắng Da Mặt
+                                    </li>
+                                    <li>
+                                        <img src="https://via.placeholder.com/30" alt="Làm Sạch Da">
+                                        Làm Sạch Da
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </li>
+
+                    <!-- User Account -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white d-flex align-items-center" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person"></i> Chào Hào <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Store Locator -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-shop"></i> Hệ thống cửa hàng</a>
+                    </li>
+
+                    <!-- Customer Support -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="#"><i class="bi bi-telephone"></i> Hỗ trợ khách hàng</a>
+                    </li>
+
+                    <!-- Cart with notification -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link position-relative text-white cart-icon" href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--End Header-->
+    <!-- Spa Treatment Detail Content -->
+    <main id="spa-detail">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <img src="path/to/aromatherapy-massage.jpg" alt="Luxury Aromatherapy Massage"
+                        class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="mb-4">Luxury Aromatherapy Massage</h1>
+                    <p class="lead mb-4">Indulge in the ultimate relaxation experience with our signature aromatherapy
+                        massage.</p>
+                    <div class="treatment-info mb-4">
+                        <p><strong>Duration:</strong> 90 minutes</p>
+                        <p><strong>Price:</strong> $120</p>
+                    </div>
+                    <button class="btn btn-primary btn-lg mb-4" data-bs-toggle="modal"
+                        data-bs-target="#bookingModal">Book Now</button>
+                    <h2 class="h4 mb-3">Description</h2>
+                    <p>Our Luxury Aromatherapy Massage combines the healing power of touch with the therapeutic benefits
+                        of essential oils. This treatment is designed to relieve stress, improve circulation, and
+                        promote overall well-being.</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4">
+                    <h2 class="h4 mb-3">Benefits</h2>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i> Reduces stress and anxiety</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Improves sleep quality</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Boosts immune system</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Relieves muscle tension and pain</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Enhances mood and mental clarity</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h2 class="h4 mb-3">What to Expect</h2>
+                    <p>During your aromatherapy massage, our skilled therapist will use a blend of essential oils
+                        tailored to your needs. The massage combines various techniques, including Swedish and deep
+                        tissue, to provide a truly personalized experience.</p>
+                    <p>You'll be asked to choose from a selection of aromatherapy blends, each designed to address
+                        specific concerns such as relaxation, energizing, or detoxification.</p>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h2 class="h4 mb-3">Preparation Tips</h2>
+                    <ul>
+                        <li>Arrive 15 minutes before your appointment to complete any necessary paperwork and relax.
+                        </li>
+                        <li>Inform your therapist of any medical conditions, injuries, or areas of concern.</li>
+                        <li>Avoid heavy meals before your massage.</li>
+                        <li>Stay hydrated before and after your treatment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="h4 mb-4">Customer Reviews</h2>
+                    <div class="row" id="reviewsContainer">
+                        <!-- Reviews will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h2 class="h4 mb-4">Ready to Experience Blissful Relaxation?</h2>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal">Book
+                        Your Aromatherapy Massage Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Your Aromatherapy Massage</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label for="bookingDate" class="form-label">Select Date</label>
+                            <input type="date" class="form-control" id="bookingDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookingTime" class="form-label">Select Time</label>
+                            <select class="form-select" id="bookingTime" required>
+                                <!-- Time options will be dynamically inserted here -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="specialRequests" class="form-label">Special Requests (Optional)</label>
+                            <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+
+                        <ul>
+                            <li>Hotline: 1800 6324</li>
+                            <li>(miễn phí , 08-22h kể cả T7, CN)</li>
+                            <li>Email: HASAKI@Gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Về HASAKI.VN</h6>
+                        <ul>
+                            <li><a href="#">Giới thiệu Hasaki.vn</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Điều khoản sử dụng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+
+                        </ul>
+
+                        <ul>
+                            <li><a href="#">Các câu hỏi thường gặp</a></li>
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                            <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                            <li><a href="#">Phương thức vận chuyển</a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Tham gia bản tin của chúng tôi ngay</h6>
+                        <p>Nhận thông báo qua E-mail về các sản phẩm mới nhất và các ưu đãi đặc biệt của chúng tôi.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Nhập địa chỉ email của bạn">
+                            <button type="submit" class="site-btn">Đăng ký</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> Tất cả các quyền được bảo lưu
+                                | Mẫu này được tạo ra <i class="fa fa-heart" aria-hidden="true"></i> bởi <a
+                                    href="https://colorlib.com" target="_blank">HASAKI</a>
+
+                            <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <!-- Footer Section End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./public/assets/js/spa-detail.js"></script>
+</body>
+
+</html>

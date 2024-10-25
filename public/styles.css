@@ -744,13 +744,12 @@
     margin-top: 10px;
     font-weight: bold;
 }
+
 #show-keyword-result {
     font-size: 25px;
 }
-<<<<<<< HEAD
-=======
 
-.quantity-selector .form-control {
+<<<<<<< HEAD=======.quantity-selector .form-control {
     font-size: 1.1rem;
     padding: 5px;
     text-align: center;
@@ -892,4 +891,5 @@
 .search-suggestions li:hover {
     background-color: #f8f9fa;
 }
->>>>>>> 42e49995b04f792259ec96d85d076fe936f25881
+
+>>>>>>>42e49995b04f792259ec96d85d076fe936f25881
